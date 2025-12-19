@@ -1,0 +1,1 @@
+This folder is reserved for shared styling primitives (tokens, utilities, and future layout helpers). Current global styles live in src/app/globals.css to align with Next.js conventions.
