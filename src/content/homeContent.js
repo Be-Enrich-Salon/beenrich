@@ -77,6 +77,21 @@ export const homeContent = {
             detail: "/images/about/tools.webp",
         },
     },
+    hospitality: {
+        badge: "Our Salon",
+        title: "A Space Designed for Comfort & Care",
+        description: "Experience a clean, calm, and welcoming salon environment where every detail is thoughtfully maintained for your comfort.",
+        benefits: [
+            "Hygienic & well-maintained",
+            "Comfortable seating & calm ambience",
+            "Friendly and professional staff"
+        ],
+        images: {
+            main: "/images/saloon/saloon1.webp",
+            secondary: "/images/saloon/saloon2.webp",
+            detail: "/images/saloon/saloon3.webp"
+        }
+    },
     servicesPreview: {
         badge: "Signature Menu",
         title: "A Preview of Indulgence",
@@ -124,29 +139,108 @@ export const homeContent = {
         ],
     },
 
-    bridal: {
-        badge: "Bridal Services",
-        title: "Your dream bridal look,",
-        titleAccent: "perfectly crafted.",
-        description: "Every bride deserves to feel timeless, confident, and radiant on her special day.",
-        ctaMain: "View All Bridal Packages",
-        ctaSecondary: "Book Bridal Consultation",
-        heroImage: "/images/bridal/hero-bg.webp",
-        packages: [
+    signaturePackages: {
+        badge: "Signature Packages",
+        title: "Grooming Experiences for Every Occasion",
+        description: "From everyday grooming to luxury and bridal experiences, our packages are thoughtfully designed to suit every style and celebration.",
+        items: [
             {
-                name: "Royal Bride",
-                description: "A complete luxury bridal transformation.",
-                image: "/images/bridal/package-royal.webp",
+                name: "Regular",
+                price: "₹7,500",
+                image: "/images/packages/regular.webp",
+                includes: [
+                    "Hair Cut",
+                    "Shaving",
+                    "Shine Treatment",
+                    "Regular Pedicure",
+                    "Regular Manicure",
+                    "TanPack",
+                    "Tan Removal Facial",
+                    "Makeup"
+                ],
             },
             {
-                name: "Elegant Bride",
-                description: "Graceful, understated, and timeless.",
-                image: "/images/bridal/package-elegant.webp",
+                name: "Luxury",
+                price: "₹12,500",
+                image: "/images/packages/luxury.webp",
+                includes: [
+                    "Hair Cut",
+                    "Shaving",
+                    "Shine Treatment",
+                    "Luxury Pedicure",
+                    "Luxury Manicure",
+                    "Tanpack",
+                    "Whitening Facial",
+                    "Body Polishing",
+                    "Makeup",
+                ],
+            },
+            {
+                name: "Royal",
+                price: "₹15,500",
+                image: "/images/packages/royal.webp",
+                includes: [
+                    "Haircut",
+                    "Shaving",
+                    "Shine Treatment",
+                    "Crystal Pedicure",
+                    "Crystal Manicure",
+                    "Whitening Facial",
+                    "Full Body Polishing",
+                    "HD Makeup",
+                ],
             },
             {
                 name: "Classic Bride",
-                description: "Traditional charm with a modern touch.",
-                image: "/images/bridal/package-classic.webp",
+                price: "₹18,000",
+                image: "/images/packages/classic-bride.webp",
+                includes: [
+                    "Hair Cut",
+                    "Shine Treatment",
+                    "TanPack",
+                    "Hair Styling",
+                    "Tan Removal Facial",
+                    "Regular Pedicure",
+                    "Regular Manicure",
+                    "Full Body Polishing",
+                    "Saree Draping",
+                    "Makeup",
+                ],
+            },
+            {
+                name: "Elegant Bride",
+                price: "₹22,000",
+                image: "/images/packages/elegant-bride.webp",
+                includes: [
+                    "Hair Cut",
+                    "Shine Treatment",
+                    "TanPack",
+                    "Luxury Pedicure",
+                    "Luxury Manicure",
+                    "Whitening Facial",
+                    "Saree Draping",
+                    "Hair Styling",
+                    "Full Body Polishing",
+                    "HD Makeup",
+                ],
+            },
+            {
+                name: "Royal Bride",
+                price: "₹25,000",
+                image: "/images/packages/royal-bride.webp",
+                includes: [
+                    "Hair Cut",
+                    "Shine Treatment",
+                    "TanPack",
+                    "Advanced Hair Styling",
+                    "Crystal Pedicure",
+                    "Crystal Manicure",
+                    "Saree Draping",
+                    "Full Body Polishing",
+                    "Whitening Facial",
+                    "Saree Draping",
+                    "Royal Makeup",
+                ],
             },
         ],
     },
@@ -240,7 +334,7 @@ export const homeContent = {
             title: "Explore",
             links: [
                 { label: "Services", href: "#services" },
-                { label: "Bridal Collection", href: "#bridal" },
+                { label: "Signature Packages", href: "#packages" },
                 { label: "Our Work", href: "#gallery" },
                 { label: "About Us", href: "#about" }
             ]
@@ -262,5 +356,40 @@ export const homeContent = {
         },
         copyright: "Be Enrich Salon. All rights reserved.",
         designedBy: "Designed with Elegance"
-    }
+    },
+    testimonials: {
+        badge: "Client Experiences",
+        title: "Loved by Our Clients",
+        subtitle: "Real stories from people who trust Be Enrich Salon & Spa",
+        items: [
+            {
+                id: 1,
+                name: "Priya R.",
+                quote: "The staff are very professional and friendly. I loved the (hair cut) and facial. The salon is clean and relaxing.",
+                service: "Hair & Skin Care",
+                rating: 5
+            },
+            {
+                id: 2,
+                name: "Anjali M.",
+                quote: "Finally found a salon that understands curly hair! The stylist took their time to explain the process and the results are amazing.",
+                service: "Hair Styling",
+                rating: 5
+            },
+            {
+                id: 3,
+                name: "Rohan K.",
+                quote: "The best grooming experience I've had in Delhi. Professional, precise, and a very premium atmosphere.",
+                service: "Men's Grooming",
+                rating: 5
+            },
+            {
+                id: 4,
+                name: "Sanya D.",
+                quote: "Their bridal makeup is absolutely stunning. They made me feel so comfortable and I looked exactly how I dreamed.",
+                service: "Bridal Makeup",
+                rating: 5
+            }
+        ]
+    },
 };

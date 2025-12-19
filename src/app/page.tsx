@@ -9,14 +9,21 @@ const Features = dynamic(() => import("@/components/home/Features"), {
 const AboutSection = dynamic(() => import("@/components/home/AboutSection"), {
   loading: () => <div className="h-96 bg-charcoal" />,
 });
+const HospitalitySection = dynamic(() => import("@/components/home/HospitalitySection"), {
+  loading: () => <div className="h-96 bg-paper" />,
+});
 const ServicesPreview = dynamic(() => import("@/components/home/ServicesPreview"), {
   loading: () => <div className="h-96 bg-paper" />,
 });
-const BridalSection = dynamic(() => import("@/components/home/BridalSection"), {
+
+const SignaturePackages = dynamic(() => import("@/components/home/SignaturePackages"), {
   loading: () => <div className="h-96 bg-charcoal" />,
 });
 const GallerySection = dynamic(() => import("@/components/home/GallerySection"), {
   loading: () => <div className="h-96 bg-paper" />,
+});
+const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection"), {
+  loading: () => <div className="h-96 bg-ink" />,
 });
 const ContactSection = dynamic(() => import("@/components/contact/ContactSection"), {
   loading: () => <div className="h-96 bg-charcoal" />,
@@ -32,9 +39,11 @@ export default function HomePage() {
       <Stats />
       <Features />
       <AboutSection />
+      <HospitalitySection />
       <ServicesPreview />
-      <BridalSection />
+      <SignaturePackages />
       <GallerySection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

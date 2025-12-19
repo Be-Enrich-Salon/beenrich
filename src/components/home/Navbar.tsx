@@ -13,8 +13,8 @@ const Navbar = () => {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="section-shell pt-6">
-        <div className="flex items-center justify-between rounded-full border border-gold/20 bg-ink/70 px-6 py-2 shadow-card backdrop-blur">
-          <Link href="#home" className="relative h-16 w-48 flex items-center">
+        <div className="flex items-center justify-between rounded-full border border-gold/20 bg-ink/70 px-6 py-1 shadow-card backdrop-blur">
+          <Link href="#home" className="relative h-12 w-48 flex items-center">
             <Image
               src="/images/hero/logo.webp"
               alt="Be Enrich"
