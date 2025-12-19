@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { homeContent } from "@/content/homeContent";
@@ -11,15 +11,9 @@ const TestimonialsSection = () => {
     const [direction, setDirection] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
 
-    useEffect(() => {
-        if (isPaused) return;
-        const timer = setInterval(() => {
-            paginate(1);
-        }, 3000); // 4 seconds auto-slide
-        return () => clearInterval(timer);
-    }, [currentIndex, isPaused]);
 
-    const paginate = (newDirection: number) => {
+
+    const paginate = useCallback((newDirection: number) => {
         setDirection(newDirection);
         setCurrentIndex((prevIndex) => {
             let nextIndex = prevIndex + newDirection;
@@ -27,7 +21,15 @@ const TestimonialsSection = () => {
             if (nextIndex >= testimonials.items.length) nextIndex = 0;
             return nextIndex;
         });
-    };
+    }, [testimonials.items.length]);
+
+    useEffect(() => {
+        if (isPaused) return;
+        const timer = setInterval(() => {
+            paginate(1);
+        }, 3000); // 4 seconds auto-slide
+        return () => clearInterval(timer);
+    }, [currentIndex, isPaused, paginate]);
 
     const currentTestimonial = testimonials.items[currentIndex];
 
@@ -121,7 +123,7 @@ const TestimonialsSection = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    "{currentTestimonial.quote}"
+                                    &quot;{currentTestimonial.quote}&quot;
                                 </motion.blockquote>
 
                                 {/* Author Details */}
