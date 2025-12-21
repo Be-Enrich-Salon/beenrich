@@ -3,33 +3,38 @@ export const homeContent = {
         slides: [
             {
                 id: 1,
-                image: "/images/hero/hair-cut.webp",
-                title: "Luxury Hair Care",
+                image: "/images/hero/womenhaircare.jpg",
+                title: "Hair Studio",
                 subtitle: "Precision cuts and styling tailored to your individuality.",
+                position: "center top",
             },
             {
                 id: 2,
-                image: "/images/hero/hair-spa.webp",
-                title: "Advanced Hair Treatments",
-                subtitle: "Restorative therapies designed for strength, shine, and balance.",
+                image: "/images/hero/facial.webp",
+                title: "Skin & Glow Rituals",
+                subtitle: "Personalised skin rituals for a healthy, luminous glow.",
+                position: "center 30%",
             },
             {
                 id: 3,
-                image: "/images/hero/hair-color.webp",
-                title: "Signature Hair Color",
-                subtitle: "Expert color techniques for natural, radiant results.",
+                image: "/images/hero/bride.jpg",
+                title: "Bridal & Groom Makeovers",
+                subtitle: "Timeless magnificent looks for your special day.",
+                position: "center 35%",
             },
             {
                 id: 4,
-                image: "/images/hero/facial.webp",
-                title: "Skin Care & Facials",
-                subtitle: "Personalised skin rituals for a healthy, luminous glow.",
+                image: "/images/hero/body-spa.webp",
+                title: "Body Spa & Relaxation",
+                subtitle: "Holistic therapies designed to de-stress and restore balance.",
+                position: "center",
             },
             {
                 id: 5,
-                image: "/images/hero/body-spa.webp",
-                title: "Bridal, Makeup & Wellness",
-                subtitle: "Timeless bridal looks and indulgent spa experiences.",
+                image: "/images/gallery/grooming-moment.webp",
+                title: "Personal Grooming & Nail Care",
+                subtitle: "Flawless grooming essentials and expert nail care.",
+                position: "center 70%",
             },
         ]
 
@@ -67,13 +72,13 @@ export const homeContent = {
         badge: "Our Philosophy",
         title: "Crafting Beauty,",
         titleAccent: "Defining Style",
-        description1: "We believe that true style is timeless. Our approach combines traditional craftsmanship with modern techniques to create a look that is uniquely yours.",
+        description1: "Be Enrich Beauty Salon offers professional beauty, hair, and wellness services in a refined and relaxing environment. With expert professionals, premium products, and personalized care, we help you look your best and feel confident every day.",
         description2: "Step into a sanctuary of refined grooming and beauty, where every detail is curated for your comfort and confidence.",
         ctaText: "Discover Our Story",
         ctaLink: "/about",
         images: {
-            main: "/images/about/haircut.webp",
-            secondary: "/images/about/interior.webp",
+            main: "/images/about/about.webp",
+            secondary: "/images/about/haircut.webp",
             detail: "/images/about/tools.webp",
         },
     },
@@ -89,7 +94,8 @@ export const homeContent = {
         images: {
             main: "/images/saloon/saloon1.webp",
             secondary: "/images/saloon/saloon2.webp",
-            detail: "/images/saloon/saloon3.webp"
+            detail: "/images/saloon/saloon3.webp",
+            fourth: "/images/about/interior.webp"
         }
     },
     servicesPreview: {
@@ -101,53 +107,67 @@ export const homeContent = {
 
         items: [
             {
-                title: "Hair Styling & Care",
+                id: "men-hair-care",
+                title: "Men Hair Care",
                 description:
-                    "Professional haircuts, styling, colouring, hair spa, and treatments tailored to your hair type and lifestyle.",
-                image: "/images/hero/hair-cut.webp",
+                    "Precision cuts and beard styling designed to define the modern man's signature look.",
+                image: "/images/services/menhaircare.webp",
             },
             {
-                title: "Beard & Grooming",
+                id: "women-hair-care",
+                title: "Women Hair Care",
                 description:
-                    "Expert beard grooming, trimming, shaping, and personal care for a sharp and confident look.",
-                image: "/images/hero/hair-cut.webp",
+                    "Artistic styling and nourishing rituals that celebrate your natural beauty and grace.",
+                image: "/images/services/hair-studio.webp",
             },
             {
-                title: "Skin, Face & Waxing",
+                id: "chemical-treatments",
+                title: "Chemical Treatments",
                 description:
-                    "Facials, clean-ups, skin polishing, tan removal, threading, and hygienic waxing services for radiant skin.",
+                    "Advanced color, texture, and smooting transformations using world-class formulations.",
+                image: "/images/services/chemical-treatments-mix.webp",
+            },
+            {
+                id: "grooming-makeup",
+                title: "Grooming & Make Up",
+                description:
+                    "Flawless grooming essentials and professional makeup artistry for every special occasion.",
+                image: "/images/hero/bride.jpg",
+                position: "center 20%",
+            },
+            {
+                id: "skin-care",
+                title: "Skin Care",
+                description:
+                    "Rejuvenating facial therapies designed to restore radiance and youthful vitality.",
                 image: "/images/hero/facial.webp",
             },
             {
-                title: "Massage & Body Spa",
+                id: "pedicure-manicure",
+                title: "Pedicure & Manicure",
                 description:
-                    "Relaxing body massages, spa therapies, and wellness treatments designed to refresh body and mind.",
-                image: "/images/hero/body-spa.webp",
+                    "Indulgent hand and foot rituals that blend relaxation with expert nail grooming.",
+                image: "/images/services/manicure-pedicure.webp",
             },
             {
-                title: "Manicure & Pedicure",
+                id: "body-spa-reflexology",
+                title: "Body SPA & Reflexology",
                 description:
-                    "Nourishing manicure and pedicure services to care for, repair, and beautify your hands and feet.",
+                    "Holistic body therapies and reflexology designed to de-stress and restore inner balance.",
                 image: "/images/hero/body-spa.webp",
-            },
-            {
-                title: "Makeup & Bridal Services",
-                description:
-                    "Professional makeup, bridal styling, and event-ready looks crafted for your most special occasions.",
-                image: "/images/hero/hair-spa.webp",
             },
         ],
     },
 
     signaturePackages: {
         badge: "Signature Packages",
-        title: "Grooming Experiences for Every Occasion",
+        title: "Exquisite Grooming Journeys",
         description: "From everyday grooming to luxury and bridal experiences, our packages are thoughtfully designed to suit every style and celebration.",
         items: [
             {
                 name: "Regular",
                 price: "₹7,500",
-                image: "/images/packages/regular.webp",
+                image: "/images/services/men-hair-hero.webp",
                 includes: [
                     "Hair Cut",
                     "Shaving",
@@ -162,7 +182,7 @@ export const homeContent = {
             {
                 name: "Luxury",
                 price: "₹12,500",
-                image: "/images/packages/luxury.webp",
+                image: "/images/services/menhaircare.webp",
                 includes: [
                     "Hair Cut",
                     "Shaving",
@@ -178,7 +198,7 @@ export const homeContent = {
             {
                 name: "Royal",
                 price: "₹15,500",
-                image: "/images/packages/royal.webp",
+                image: "/images/gallery/grooming-moment.webp",
                 includes: [
                     "Haircut",
                     "Shaving",
@@ -250,7 +270,7 @@ export const homeContent = {
         subtitleAccent: "timeless beauty",
         images: [
             {
-                src: "/images/gallery/bridal-portrait.webp",
+                src: "/images/hero/bride.jpg",
                 alt: "Bridal Portrait",
                 category: "Bridal",
                 ratio: "3/4"
@@ -300,11 +320,11 @@ export const homeContent = {
             },
             phone: {
                 label: "Phone",
-                value: "+91 98765 43210"
+                value: "+91 8125944445"
             },
             email: {
                 label: "Email",
-                value: "bookings@beenrich.com"
+                value: "enrich.ap@gmail.com"
             },
             hours: {
                 label: "Working Hours",
@@ -330,19 +350,24 @@ export const homeContent = {
     footer: {
         brandName: "Be Enrich",
         tagline: "Premium salon and spa experiences that blend artistry, science, and heartfelt hospitality.",
+        socials: {
+            instagram: "https://instagram.com",
+            facebook: "https://facebook.com",
+            twitter: "https://twitter.com"
+        },
         explore: {
             title: "Explore",
             links: [
-                { label: "Services", href: "#services" },
-                { label: "Signature Packages", href: "#packages" },
-                { label: "Our Work", href: "#gallery" },
-                { label: "About Us", href: "#about" }
+                { label: "Services", href: "/#services" },
+                { label: "Signature Packages", href: "/#packages" },
+                { label: "Our Work", href: "/#gallery" },
+                { label: "About Us", href: "/about" }
             ]
         },
         support: {
             title: "Support",
             links: [
-                { label: "Book Appointment", href: "#booking" },
+                { label: "Book Appointment", href: "/#booking" },
                 { label: "Privacy Policy", href: "#" },
                 { label: "Terms of Service", href: "#" },
                 { label: "FAQ", href: "#" }
@@ -351,8 +376,8 @@ export const homeContent = {
         contact: {
             title: "Contact Us",
             address: "123 Luxury Lane, Golden Enclave, New Delhi, India",
-            phone: "+91 98765 43210",
-            email: "hello@beenrich.com"
+            phone: "+91 8125944445",
+            email: "enrich.ap@gmail.com"
         },
         copyright: "Be Enrich Salon. All rights reserved.",
         designedBy: "Designed with Elegance"
@@ -390,6 +415,24 @@ export const homeContent = {
                 service: "Bridal Makeup",
                 rating: 5
             }
+        ]
+    },
+    brands: {
+        title: "Our Trusted Partners",
+        subtitle: "Collaborating with the world's finest beauty brands",
+        sideImage: "/images/brands/productimages.webp",
+        items: [
+            { name: "Algotherm", logo: "/images/brands/algotherm-logo-horizontal.webp" },
+            { name: "Skeyndor", logo: "/images/brands/skr_logo-black_cr.webp" },
+            { name: "Keune", logo: "/images/brands/keune-logo.webp" },
+            { name: "Kryolan", logo: "/images/brands/kryolan-professional-make-up-logo.webp" },
+            { name: "Redken", logo: "/images/brands/redkenlogo.webp" },
+            { name: "Wella Professionals", logo: "/images/brands/wella-logo.webp" },
+            { name: "M.A.C", logo: "/images/brands/MAC-Cosmetics-Logo.webp" },
+            { name: "Schwarzkopf Professional", logo: "/images/brands/Science-Create-Beauty-Logo-Black.webp" },
+            { name: "L'Oréal Professionnel", logo: "/images/brands/OIP.webp" },
+            { name: "O3+", logo: "/images/brands/OIP (2).webp" },
+            { name: "KooSwalla", logo: "/images/brands/LOGO.webp" }
         ]
     },
 };

@@ -26,7 +26,7 @@ export default function SignaturePackages() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl md:text-5xl font-serif mb-6 leading-tight"
+                        className="text-4xl md:text-5xl font-serif mb-6 leading-tight text-gold"
                     >
                         {signaturePackages.title}
                     </motion.h2>
@@ -98,6 +98,7 @@ export default function SignaturePackages() {
                                 </ul>
 
                                 <button
+                                    type="button"
                                     className="w-full px-6 py-3 border border-white/20 rounded-full text-sm tracking-wider uppercase hover:bg-gold hover:text-ink hover:border-gold transition-all duration-300"
                                 >
                                     Book Appointment
@@ -110,3 +111,4 @@ export default function SignaturePackages() {
         </section>
     );
 }
+

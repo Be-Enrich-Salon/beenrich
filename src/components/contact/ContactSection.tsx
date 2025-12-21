@@ -12,7 +12,7 @@ export default function ContactSection() {
     const { contact } = homeContent;
 
     return (
-        <section className="py-24 bg-stone text-paper relative overflow-hidden">
+        <section id="contact" className="py-24 bg-stone text-paper relative overflow-hidden">
             {/* Delicate background accent */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-50" />
 
@@ -23,7 +23,7 @@ export default function ContactSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-serif mb-4"
+                        className="text-4xl md:text-5xl font-serif mb-4 text-paper"
                     >
                         {contact.title} <span style={{ color: colors.gold }}>{contact.titleAccent}</span>
                     </motion.h2>

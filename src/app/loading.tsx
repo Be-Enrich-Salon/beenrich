@@ -17,7 +17,7 @@ export default function Loading() {
                     alt="Be Enrich"
                     fill
                     className="object-contain"
-                    priority
+                    sizes="256px"
                 />
             </motion.div>
 

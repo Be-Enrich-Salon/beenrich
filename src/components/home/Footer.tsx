@@ -19,13 +19,13 @@ const Footer = () => {
               {footer.tagline}
             </p>
             <div className="flex items-center space-x-4">
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300">
+              <a href={footer.socials?.instagram || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300">
+              <a href={footer.socials?.facebook || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300">
+              <a href={footer.socials?.twitter || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Twitter">
                 <Twitter size={18} />
               </a>
             </div>
@@ -64,12 +64,12 @@ const Footer = () => {
                 <span>{footer.contact.address}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone size={18} style={{ color: colors.gold }} className="flex-shrink-0" />
-                <span>{footer.contact.phone}</span>
+                <Phone size= {18} style={{ color: colors.gold }} className="flex-shrink-0" />
+                <a href={`tel:${footer.contact.phone.replace(/\s+/g, "")}`} className="hover:text-gold transition-colors">{footer.contact.phone}</a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail size={18} style={{ color: colors.gold }} className="flex-shrink-0" />
-                <span>{footer.contact.email}</span>
+                <Mail size= {18} style={{ color: colors.gold }} className="flex-shrink-0" />
+                <a href={`mailto:${footer.contact.email}`} className="hover:text-gold transition-colors">{footer.contact.email}</a>
               </li>
             </ul>
           </div>

@@ -18,7 +18,7 @@ const AboutSection = () => {
                                 alt="Stylist cutting hair"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                className="object-cover transition-all duration-700"
                             />
                         </div>
 
@@ -29,7 +29,7 @@ const AboutSection = () => {
                                 alt="Luxury salon interior"
                                 fill
                                 sizes="(max-width: 768px) 50vw, 33vw"
-                                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                className="object-cover transition-all duration-700"
                             />
                         </div>
 

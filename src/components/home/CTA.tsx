@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-r from-ink via-charcoal to-ink py-16 text-paper">
+    <section id="booking" className="relative overflow-hidden bg-gradient-to-r from-ink via-charcoal to-ink py-16 text-paper">
       <div className="absolute inset-y-0 right-[-20%] h-[140%] w-1/2 rotate-6 rounded-full bg-gold/10 blur-3xl" aria-hidden />
       <div className="section-shell">
         <div className="relative isolate overflow-hidden rounded-3xl border border-gold/25 bg-ink/70 px-8 py-10 shadow-card backdrop-blur lg:px-12 lg:py-14">

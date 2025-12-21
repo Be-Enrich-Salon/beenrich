@@ -3,6 +3,7 @@
 import React, { useLayoutEffect, useRef, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import Lenis from 'lenis';
+import { cn } from '@/utils/cn';
 
 export interface ScrollStackItemProps {
     itemClassName?: string;
@@ -11,7 +12,7 @@ export interface ScrollStackItemProps {
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, itemClassName = '' }) => (
     <div
-        className={`scroll-stack-card relative w-full h-[280px] md:h-[280px] mb-4 p-0 rounded-[30px] shadow-[0_0_20px_rgba(0,0,0,0.08)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+        className={`scroll-stack-card relative w-full mb-4 p-0 rounded-[30px] shadow-[0_0_20px_rgba(0,0,0,0.08)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
         style={{
             backfaceVisibility: 'hidden',
             transformStyle: 'preserve-3d'
@@ -386,18 +387,25 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
     return (
         <div
-            className={`relative w-full h-full overflow-y-auto overflow-x-visible ${className}`.trim()}
+            className={cn(
+                "relative w-full overflow-x-visible",
+                useWindowScroll ? "h-auto overflow-visible" : "h-full overflow-y-auto",
+                className
+            )}
             ref={scrollerRef}
-            style={{
+            style={!useWindowScroll ? {
                 overscrollBehavior: 'contain',
                 WebkitOverflowScrolling: 'touch',
                 scrollBehavior: 'smooth',
                 WebkitTransform: 'translate3d(0,0,0)',
                 transform: 'translate3d(0,0,0)',
                 willChange: 'scroll-position'
-            }}
+            } : {}}
         >
-            <div className="scroll-stack-inner pt-4 px-4 md:px-20 pb-[40vh]">
+            <div className={cn(
+                "scroll-stack-inner pt-4 px-0 pb-[15vh]",
+                !useWindowScroll && "px-4 md:px-20"
+            )}>
                 {children}
                 {/* Spacer so the last pin can release cleanly */}
                 <div className="scroll-stack-end w-full h-px" />
