@@ -604,8 +604,8 @@ export const servicesContent = {
         },
         popularServices: [
             { title: "Swedish Massage", description: "Relaxing full body therapy.", image: "/images/services/body_therapy_service.webp" },
-            { title: "Deep Tissue", description: "Intensive muscle relief.", image: "/images/services/body_therapy_service.webp" },
-            { title: "Body Polishing", description: "Full body exfoliation.", image: "/images/services/body_therapy_service.webp" },
+            { title: "Deep Tissue", description: "Intensive muscle relief.", image: "/images/hero/body-spa.webp" },
+            { title: "Body Polishing", description: "Full body exfoliation.", image: "/images/services/body_polishing_service.webp" },
             { title: "Foot Reflexology", description: "Pressure point therapy.", image: "/images/services/reflexology_service.webp" },
         ],
         detailedSections: [
