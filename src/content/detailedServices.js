@@ -168,9 +168,9 @@ export const detailedServicesContent = {
                 category: "Skin Polishings",
                 items: [
                     { name: "Full Body", price: "4000" },
-                    { name: "Full Hands - Regular", price: "800" },
+                    { name: "Full Hands - Classic", price: "800" },
                     { name: "Full Hands - Luxury", price: "1000" },
-                    { name: "Neck - Regular", price: "700" },
+                    { name: "Neck - Classic", price: "700" },
                     { name: "Neck - Luxury", price: "1000" },
                     { name: "Neck Cleansing", price: "400" },
                     { name: "Foot Polishing", price: "400" },
@@ -215,7 +215,7 @@ export const detailedServicesContent = {
         ],
         sections: [
             {
-                category: "Waxing (Regular / Chocolate / Paraffin)",
+                category: "Waxing (Classic / Chocolate / Paraffin)",
                 items: [
                     { name: "Full Body", price: "2500 / 3000 / 3000" },
                     { name: "Full Arms", price: "350 / 400 / 800" },
@@ -235,7 +235,7 @@ export const detailedServicesContent = {
                 ]
             },
             {
-                category: "Makeup & Styling (Regular / Luxury / HD)",
+                category: "Makeup & Styling (Classic / Luxury / HD)",
                 items: [
                     { name: "Light Makeup", price: "2000 / 2500 / 3000" },
                     { name: "Party Makeup", price: "2000 / 2500 / 3000" },
@@ -245,7 +245,7 @@ export const detailedServicesContent = {
                     { name: "Hair Updo's", price: "3000 onwards" },
                     { name: "Saree Draping", price: "699" },
                     { name: "Mehendi - bridal", price: "5000 onwards" },
-                    { name: "Mehendi - Regular", price: "500 onwards" }
+                    { name: "Mehendi - Classic", price: "500 onwards" }
                 ]
             },
             {

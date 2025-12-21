@@ -165,15 +165,15 @@ export const homeContent = {
         description: "From everyday grooming to luxury and bridal experiences, our packages are thoughtfully designed to suit every style and celebration.",
         items: [
             {
-                name: "Regular",
+                name: "Classic",
                 price: "₹7,500",
                 image: "/images/services/men-hair-hero.webp",
                 includes: [
                     "Hair Cut",
                     "Shaving",
                     "Shine Treatment",
-                    "Regular Pedicure",
-                    "Regular Manicure",
+                    "Classic Pedicure",
+                    "Classic Manicure",
                     "TanPack",
                     "Tan Removal Facial",
                     "Makeup"
@@ -220,8 +220,8 @@ export const homeContent = {
                     "TanPack",
                     "Hair Styling",
                     "Tan Removal Facial",
-                    "Regular Pedicure",
-                    "Regular Manicure",
+                    "Classic Pedicure",
+                    "Classic Manicure",
                     "Full Body Polishing",
                     "Saree Draping",
                     "Makeup",
@@ -375,7 +375,7 @@ export const homeContent = {
         },
         contact: {
             title: "Contact Us",
-            address: "123 Luxury Lane, Golden Enclave, New Delhi, India",
+            address: "2nd Floor, Shop No 12,13A, Trendset Mall, Sai Nagar, Kala Nagar, Acharya Ranga Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520008",
             phone: "+91 8125944445",
             email: "enrich.ap@gmail.com"
         },

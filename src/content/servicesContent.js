@@ -359,8 +359,8 @@ export const servicesContent = {
         ],
         detailedSections: [
             {
-                title: "Waxing (Regular / Chocolate / Paraffin)",
-                description: "Gentle hair removal services. Prices listed for Regular / Chocolate-Strawberry / Paraffin.",
+                title: "Waxing (Classic / Chocolate / Paraffin)",
+                description: "Gentle hair removal services. Prices listed for Classic / Chocolate-Strawberry / Paraffin.",
                 image: "/images/services/waxing_service.webp",
                 items: [
                     { name: "Full Body", price: "2500 / 3000 / 3000" },
@@ -380,7 +380,7 @@ export const servicesContent = {
                 ],
             },
             {
-                title: "Makeup & Styling (Regular / Luxury / HD)",
+                title: "Makeup & Styling (Classic / Luxury / HD)",
                 description: "Professional makeup artistry for your special moments.",
                 image: "/images/services/bridal_makeup_service.webp",
                 items: [
@@ -392,7 +392,7 @@ export const servicesContent = {
                     { name: "Hair Updo's", price: "3000 onwards" },
                     { name: "Saree Draping", price: "₹699" },
                     { name: "Mehendi - Bridal", price: "5000 onwards" },
-                    { name: "Mehendi - Regular", price: "500 onwards" },
+                    { name: "Mehendi - Classic", price: "500 onwards" },
                 ],
             },
             {
@@ -477,11 +477,11 @@ export const servicesContent = {
                 image: "/images/services/skin_polishing_section_image.webp",
                 items: [
                     { name: "Full Body", price: "₹4000" },
-                    { name: "Full Hands - Regular", price: "₹800" },
+                    { name: "Full Hands - Classic", price: "₹800" },
                     { name: "Full Hands - Luxury", price: "₹1000" },
                     { name: "Half Legs", price: "₹700" },
                     { name: "Full Legs", price: "₹1500" },
-                    { name: "Neck - Regular", price: "₹700" },
+                    { name: "Neck - Classic", price: "₹700" },
                     { name: "Neck - Luxury", price: "₹1000" },
                     { name: "Neck Cleansing", price: "₹400" },
                     { name: "Foot Polishing", price: "₹400" },
@@ -612,7 +612,7 @@ export const servicesContent = {
             {
                 title: "Body Therapy",
                 description: "Full body rituals for deep relaxation.",
-                image: "/images/hero/body-spa.webp",
+                image: "/images/services/body_therapy_service.webp",
                 items: [
                     { name: "Full Body Swedish Massage", price: "₹3500" },
                     { name: "Deep Tissue Therapy", price: "₹4000" },
@@ -622,7 +622,7 @@ export const servicesContent = {
             {
                 title: "Quick Relief",
                 description: "Focused treatments for busy schedules.",
-                image: "/images/hero/body-spa.webp",
+                image: "/images/services/reflexology_service.webp",
                 items: [
                     { name: "Foot Reflexology (30 min)", price: "₹1200" },
                     { name: "Back & Shoulder Release", price: "₹1500" },

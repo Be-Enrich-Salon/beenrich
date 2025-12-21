@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="pt-20 lg:pt-24">
+        <main className="">
             <Script
                 id="about-schema"
                 type="application/ld+json"
