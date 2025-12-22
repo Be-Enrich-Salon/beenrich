@@ -56,6 +56,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     const stackCompletedRef = useRef(false);
     const animationFrameRef = useRef<number | null>(null);
     const lenisRef = useRef<Lenis | null>(null);
+    const nativeCleanupRef = useRef<(() => void) | null>(null);
     const cardsRef = useRef<HTMLElement[]>([]);
     const lastTransformsRef = useRef(new Map<number, any>());
     const isUpdatingRef = useRef(false);
@@ -275,6 +276,28 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     }, [updateCardTransforms]);
 
     const setupLenis = useCallback(() => {
+        // Mobile/Tablet Detection: Disable Lenis on devices smaller than 1024px or touch-enabled devices
+        const isMobile =
+            (typeof window !== 'undefined') &&
+            (
+                window.innerWidth < 1024 ||
+                (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches)
+            );
+
+        if (isMobile) {
+            const target = useWindowScroll ? window : scrollerRef.current;
+            if (!target) return null;
+
+            const handleNativeScroll = () => {
+                // Pass undefined to force use of getScrollData() (native scrollTop)
+                updateCardTransforms(undefined);
+            };
+
+            target.addEventListener('scroll', handleNativeScroll, { passive: true });
+            nativeCleanupRef.current = () => target.removeEventListener('scroll', handleNativeScroll);
+            return null;
+        }
+
         if (useWindowScroll) {
             const lenis = new Lenis({
                 duration: 1.2,
@@ -328,7 +351,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             lenisRef.current = lenis;
             return lenis;
         }
-    }, [handleScroll, useWindowScroll]);
+    }, [handleScroll, useWindowScroll, updateCardTransforms]);
 
     useLayoutEffect(() => {
         if (!useWindowScroll && !scrollerRef.current) return;
@@ -354,7 +377,9 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             card.style.transform = 'translate3d(0,0,0)';
         });
 
+        // Initialize Scroll Handler (Lenis or Native)
         setupLenis();
+        // Initial setup
         updateCardTransforms();
 
         return () => {
@@ -363,6 +388,11 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             }
             if (lenisRef.current) {
                 lenisRef.current.destroy();
+                lenisRef.current = null;
+            }
+            if (nativeCleanupRef.current) {
+                nativeCleanupRef.current();
+                nativeCleanupRef.current = null;
             }
             stackCompletedRef.current = false;
             cardsRef.current = [];
@@ -376,7 +406,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         stackPosition,
         scaleEndPosition,
         baseScale,
-        // removed scaleDuration unused
         rotationAmount,
         blurAmount,
         useWindowScroll,

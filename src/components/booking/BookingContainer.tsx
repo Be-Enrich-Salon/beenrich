@@ -133,7 +133,18 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                         )}
                     </div>
 
-                    <div className="all-services" onWheel={onWheelScroll}>
+                    <div
+                        className="all-services"
+                        onWheel={onWheelScroll}
+                        onTouchStart={(e) => {
+                            // Capture gesture start to avoid bubbling to the page
+                            e.stopPropagation();
+                        }}
+                        onTouchMove={(e) => {
+                            // Keep touch scrolling inside the list on mobile
+                            e.stopPropagation();
+                        }}
+                    >
                         {Object.entries(groupedServices).map(([category, categoryServices]) => (
                             <div key={category}>
                                 <h3 className="service-type">{category}</h3>

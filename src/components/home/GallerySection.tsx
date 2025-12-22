@@ -33,14 +33,20 @@ export default function GallerySection() {
 
     const scrollNext = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" });
+            const container = scrollContainerRef.current;
+            const cardWidth = container.firstElementChild?.clientWidth || 400;
+            const gap = 24; // 1.5rem gap
+            container.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
             setCurrentSlide((prev) => Math.min(prev + 1, galleryImages.length - 1));
         }
     };
 
     const scrollPrev = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: -400, behavior: "smooth" });
+            const container = scrollContainerRef.current;
+            const cardWidth = container.firstElementChild?.clientWidth || 400;
+            const gap = 24;
+            container.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
             setCurrentSlide((prev) => Math.max(prev - 1, 0));
         }
     };
@@ -69,12 +75,12 @@ export default function GallerySection() {
                 </div>
 
                 {/* Horizontal Carousel */}
-                <div className="relative">
+                <div className="relative group/gallery">
                     {/* Scrollable Container */}
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
-                        style={{ scrollBehavior: "smooth" }}
+                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 no-scrollbar"
+                        style={{ scrollBehavior: "smooth", scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {galleryImages.map((image, index) => (
                             <motion.div
@@ -116,7 +122,7 @@ export default function GallerySection() {
                     {/* Left Arrow */}
                     <button
                         onClick={scrollPrev}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-12 z-10 p-3 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg"
+                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm opacity-0 group-hover/gallery:opacity-100 md:opacity-100"
                         aria-label="Scroll left"
                     >
                         <ChevronLeft size={24} />
@@ -125,7 +131,7 @@ export default function GallerySection() {
                     {/* Right Arrow */}
                     <button
                         onClick={scrollNext}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-12 z-10 p-3 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg"
+                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm opacity-0 group-hover/gallery:opacity-100 md:opacity-100"
                         aria-label="Scroll right"
                     >
                         <ChevronRight size={24} />
