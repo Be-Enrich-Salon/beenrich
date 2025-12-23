@@ -17,6 +17,7 @@ const AboutHero = () => {
                     fill
                     className="object-cover opacity-50"
                     priority
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
@@ -31,7 +32,7 @@ const AboutHero = () => {
                     className="font-display text-5xl md:text-7xl text-paper tracking-tight"
                 >
                     {aboutContent.hero.title}
-                    <span className="block text-2xl md:text-3xl mt-2 font-serif italic text-gold">{aboutContent.hero.subtitle}</span>
+                    <span className="block text-2xl md:text-3xl mt-2 font-display italic text-gold">{aboutContent.hero.subtitle}</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}

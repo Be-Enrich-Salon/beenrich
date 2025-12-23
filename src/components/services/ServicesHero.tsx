@@ -1,5 +1,6 @@
 "use client";
 
+import { useBooking } from "@/context/BookingContext";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { servicesContent } from "@/content/servicesContent";
@@ -8,8 +9,9 @@ import { useRef } from "react";
 
 const ServicesHero = () => {
     const { hero } = servicesContent;
+    const { openBooking } = useBooking();
     const containerRef = useRef(null);
-    
+
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"]
@@ -21,19 +23,19 @@ const ServicesHero = () => {
     return (
         <section ref={containerRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-ink pt-28 md:pt-32">
             {/* Smooth Background with Parallax */}
-            <motion.div 
+            <motion.div
                 style={{ scale }}
                 className="absolute inset-0"
             >
                 <Image
-                    src="/images/hero/hair-spa.webp"
+                    src="/images/hero/men-hair-care-responsive.webp"
                     alt="Be Enrich Services"
                     fill
                     sizes="100vw"
-                    className="object-cover opacity-30"
+                    className="object-cover opacity-20"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/60 to-paper" />
+                <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/40 to-paper" />
             </motion.div>
 
             {/* Subtle Floating Orbs */}
@@ -59,7 +61,7 @@ const ServicesHero = () => {
                     </motion.div>
 
                     {/* Main Heading */}
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -80,7 +82,7 @@ const ServicesHero = () => {
                     </motion.p>
 
                     {/* Stats Row */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
@@ -108,7 +110,7 @@ const ServicesHero = () => {
                     </motion.div>
 
                     {/* CTA Buttons */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
@@ -122,14 +124,14 @@ const ServicesHero = () => {
                         >
                             Explore Services
                         </motion.a>
-                        <motion.a
-                            href="/#booking"
+                        <motion.button
+                            onClick={openBooking}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gold/30 text-paper rounded-full font-bold uppercase tracking-wider text-sm transition-all hover:bg-gold/10 hover:border-gold"
                         >
                             Book Appointment
-                        </motion.a>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </div>

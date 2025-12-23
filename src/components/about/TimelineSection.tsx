@@ -12,8 +12,10 @@ const TimelineSection = () => {
 
             <div className="section-shell relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-display mb-6 text-gold">{aboutContent.timeline.title}</h2>
-                    <p className="text-gold/60 max-w-2xl mx-auto text-lg">{aboutContent.timeline.description}</p>
+                    <h2 className="text-4xl lg:text-5xl font-display mb-8 text-gold">{aboutContent.timeline.title}</h2>
+                    <p className="text-mist/90 max-w-4xl mx-auto text-base md:text-lg leading-relaxed font-light">
+                        {aboutContent.timeline.description}
+                    </p>
                 </div>
 
                 <div className="relative border-l-2 border-gold/30 ml-4 md:ml-1/2 space-y-12 md:space-y-0">
@@ -34,9 +36,9 @@ const TimelineSection = () => {
                                 {/* Content Box */}
                                 <div className={`w-full md:w-1/2 ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
                                     <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-gold/50 transition-colors duration-300">
-                                        <span className="text-4xl font-display text-gold/80 block mb-2">{item.year}</span>
-                                        <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                                        <p className="text-mist/80 leading-relaxed font-light">{item.description}</p>
+                                        <span className="text-4xl font-display text-gold block mb-2">{item.year}</span>
+                                        <h3 className="text-xl font-display text-white mb-3">{item.title}</h3>
+                                        <p className="text-mist leading-relaxed font-light">{item.description}</p>
                                     </div>
                                 </div>
                             </motion.div>

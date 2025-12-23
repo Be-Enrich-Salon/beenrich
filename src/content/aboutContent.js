@@ -48,35 +48,40 @@ export const aboutContent = {
     },
     timeline: {
         title: "Our Journey",
-        description: "The journey of Be Enrich Beauty Salon began in 2003 with a clear vision and passion for grooming excellence.",
+        description: "Be Enrich Beauty Salon was founded on a passion for excellence, craftsmanship, and timeless beauty. Our journey began in 2003 as a specialized men’s grooming salon, dedicated to precision, style, and professional care.",
         milestones: [
             {
                 year: "2003",
                 title: "Inception",
-                description: "Started as a men’s salon, focused on delivering quality hair and grooming services with professionalism and care."
+                description: "Be Enrich Beauty Salon was founded as a specialized men’s grooming salon, dedicated to precision, style, and professional care."
             },
             {
                 year: "2005",
                 title: "Evolution",
-                description: "Evolved into a professional unisex and family salon, offering comprehensive hair, skin, and beauty solutions for men, women, and families under one roof."
+                description: "Guided by a vision to create a more inclusive and elevated beauty experience, Be Enrich evolved into a professional unisex and family salon—offering thoughtfully curated services for men, women, and families."
+            },
+            {
+                year: "2013",
+                title: "Started in Guntur",
+                description: "Expanded our operations to Guntur, establishing a strong presence in the region."
             },
             {
                 year: "2015",
-                title: "Expansion to Vijayawada",
-                description: "Launched our branch in Vijayawada, marking a key expansion."
+                title: "Flagship Expansion",
+                description: "Flagship expansion in Vijayawada, marking a key milestone in our growth."
             },
             {
                 year: "2017",
-                title: "Expansion to Ongole",
-                description: "Expanded our presence to Ongole."
+                title: "Ongole Establishment",
+                description: "Established our presence in Ongole, continuing our journey of bringing premium beauty services to more cities."
             },
             {
                 year: "2018",
-                title: "Establishment in Tenali",
-                description: "Established our salon in Tenali."
+                title: "Launch of our Tenali salon",
+                description: "Expanded our reach with the opening of our salon in Tenali, offering our signature services to a wider audience."
             }
         ],
-        footer: "Each milestone reflects our commitment to consistent quality, customer satisfaction, and continuous growth."
+        footer: "As our reputation for quality and trust grew, so did our presence. Each milestone reflects our commitment to excellence."
     },
     experience: {
         title: "Experience That Builds Trust",

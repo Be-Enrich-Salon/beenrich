@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import colors from "@/theme/colors";
 import { homeContent } from "@/content/homeContent";
+import { ChevronDown } from "lucide-react";
 
 export default function BookingForm() {
     const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -12,7 +12,6 @@ export default function BookingForm() {
         phone: "",
         email: "",
         service: "",
-        date: "",
         message: ""
     });
 
@@ -35,7 +34,7 @@ export default function BookingForm() {
         setStatus('loading');
 
         try {
-            const response = await fetch("https://formsubmit.co/ajax/vanibodasingu@gmail.com", {
+            const response = await fetch("https://formsubmit.co/ajax/enrich.ap@gmail.com", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +59,6 @@ export default function BookingForm() {
                     phone: "",
                     email: "",
                     service: "",
-                    date: "",
                     message: ""
                 });
                 setTimeout(() => setStatus('idle'), 5000); // Reset status after 5 seconds
@@ -74,116 +72,80 @@ export default function BookingForm() {
         }
     };
 
+    const inputClasses = "w-full bg-[#222] border border-[#333] rounded-lg px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-gold/50 transition-colors placeholder-gray-500";
+    const labelClasses = "block text-xs text-gray-400 mb-1 ml-1";
+
     return (
-        <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form className="space-y-5" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Name */}
-                <div className="relative">
-                    <label
-                        className={`absolute left-4 top-3 text-sm transition-all duration-300 pointer-events-none ${focusedField === 'name' || formData.name ? 'text-gold -translate-y-1 scale-90' : 'text-mist/50'}`}
-                    >
-                        {form.nameLabel}
-                    </label>
+                <div>
                     <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 pt-6 pb-2 text-paper focus:outline-none focus:border-gold/50 transition-colors"
-                        onFocus={() => setFocusedField('name')}
-                        onBlur={() => setFocusedField(null)}
+                        placeholder={form.nameLabel}
+                        className={inputClasses}
                         required
                     />
                 </div>
 
                 {/* Phone */}
-                <div className="relative">
-                    <label
-                        className={`absolute left-4 top-3 text-sm transition-all duration-300 pointer-events-none ${focusedField === 'phone' || formData.phone ? 'text-gold -translate-y-1 scale-90' : 'text-mist/50'}`}
-                    >
-                        {form.phoneLabel}
-                    </label>
+                <div>
                     <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 pt-6 pb-2 text-paper focus:outline-none focus:border-gold/50 transition-colors"
-                        onFocus={() => setFocusedField('phone')}
-                        onBlur={() => setFocusedField(null)}
+                        placeholder={form.phoneLabel}
+                        className={inputClasses}
                         required
                     />
                 </div>
             </div>
 
             {/* Email (Optional) */}
-            <div className="relative">
-                <label
-                    className={`absolute left-4 top-3 text-sm transition-all duration-300 pointer-events-none ${focusedField === 'email' || formData.email ? 'text-gold -translate-y-1 scale-90' : 'text-mist/50'}`}
-                >
-                    {form.emailLabel}
-                </label>
+            <div>
                 <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 pt-6 pb-2 text-paper focus:outline-none focus:border-gold/50 transition-colors"
-                    onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField(null)}
+                    placeholder={form.emailLabel}
+                    className={inputClasses}
                 />
             </div>
 
-            {/* Service & Date Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Service Selection */}
-                <div className="relative">
-                    <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 py-4 text-paper focus:outline-none focus:border-gold/50 transition-colors appearance-none"
-                    >
-                        <option value="" disabled>{form.serviceLabel}</option>
-                        {form.serviceOptions.map((option) => (
-                            <option key={option.value} className="bg-stone text-paper" value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-mist/50">
-                        ▼
-                    </div>
-                </div>
-
-                {/* Date */}
-                <div className="relative">
-                    <input
-                        type="date"
-                        name="date"
-                        value={formData.date}
-                        onChange={handleChange}
-                        className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 py-4 text-paper focus:outline-none focus:border-gold/50 transition-colors placeholder-mist/50"
-                        style={{ colorScheme: 'dark' }}
-                    />
+            {/* Service Selection */}
+            <div className="relative">
+                <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className={`${inputClasses} appearance-none cursor-pointer`}
+                >
+                    <option value="" disabled>Select Service</option>
+                    {form.serviceOptions.map((option) => (
+                        <option key={option.value} className="bg-[#222]" value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                    <ChevronDown size={16} />
                 </div>
             </div>
 
             {/* Message */}
-            <div className="relative">
-                <label
-                    className={`absolute left-4 top-3 text-sm transition-all duration-300 pointer-events-none ${focusedField === 'message' || formData.message ? 'text-gold -translate-y-1 scale-90' : 'text-mist/50'}`}
-                >
-                    {form.messageLabel}
-                </label>
+            <div>
                 <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    placeholder={form.messageLabel}
                     rows={4}
-                    className="w-full bg-stone/30 border border-white/10 rounded-lg px-4 pt-6 pb-2 text-paper focus:outline-none focus:border-gold/50 transition-colors resize-none"
-                    onFocus={() => setFocusedField('message')}
-                    onBlur={() => setFocusedField(null)}
+                    className={`${inputClasses} resize-none`}
                 ></textarea>
             </div>
 
@@ -191,17 +153,17 @@ export default function BookingForm() {
             <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className={`w-full font-bold py-4 rounded-xl transition-all duration-300 shadow-lg tracking-wide uppercase text-sm ${status === 'success'
+                className={`w-full font-bold py-3 rounded-lg transition-all duration-300 shadow-md tracking-wider uppercase text-xs ${status === 'success'
                     ? 'bg-green-600 text-white cursor-default shadow-none'
                     : status === 'error'
                         ? 'bg-red-600 text-white hover:bg-red-700'
-                        : 'bg-gold text-ink hover:bg-goldSoft hover:shadow-gold/20'
+                        : 'bg-[#C5A059] text-[#111] hover:bg-[#b08d4a]' // Gold color matching image
                     }`}
             >
-                {status === 'loading' ? 'Sending Request...'
-                    : status === 'success' ? 'Request Sent Successfully!'
+                {status === 'loading' ? 'Sending...'
+                    : status === 'success' ? 'Request Sent'
                         : status === 'error' ? 'Failed - Try Again'
-                            : form.submitText}
+                            : 'BOOK APPOINTMENT'}
             </button>
         </form>
     );

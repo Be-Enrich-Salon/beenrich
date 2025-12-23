@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import colors from "@/theme/colors";
 import { homeContent } from "@/content/homeContent";
+import { useBooking } from "@/context/BookingContext";
 
 export default function SignaturePackages() {
     const { signaturePackages } = homeContent;
+    const { openBooking } = useBooking();
 
     return (
         <section id="packages" className="relative w-full py-20 bg-charcoal text-paper overflow-hidden">
@@ -40,6 +42,9 @@ export default function SignaturePackages() {
                     </motion.p>
                 </div>
 
+                {/* Hero Image */}
+
+
                 {/* Packages Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {signaturePackages.items.map((pkg, index) => (
@@ -51,7 +56,7 @@ export default function SignaturePackages() {
                             className="group relative bg-stone/50 border border-white/5 rounded-xl overflow-hidden hover:border-gold/30 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/5 flex flex-col h-full"
                         >
                             {/* Image Section */}
-                            <div className="h-72 relative overflow-hidden">
+                            <div className="relative aspect-[4/3] md:h-72 md:aspect-auto overflow-hidden">
                                 <Image
                                     src={pkg.image}
                                     alt={pkg.name}
@@ -99,6 +104,7 @@ export default function SignaturePackages() {
 
                                 <button
                                     type="button"
+                                    onClick={openBooking}
                                     className="w-full px-6 py-3 border border-white/20 rounded-full text-sm tracking-wider uppercase hover:bg-gold hover:text-ink hover:border-gold transition-all duration-300"
                                 >
                                     Book Appointment

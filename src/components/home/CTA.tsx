@@ -1,9 +1,14 @@
-import Link from "next/link";
+"use client";
+
+import { useBooking } from "@/context/BookingContext";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const CTA = () => {
+  const { openBooking } = useBooking();
+
   return (
-    <section id="booking" className="relative overflow-hidden bg-gradient-to-r from-ink via-charcoal to-ink py-16 text-paper">
+    <section className="relative overflow-hidden bg-gradient-to-r from-ink via-charcoal to-ink py-16 text-paper">
       <div className="absolute inset-y-0 right-[-20%] h-[140%] w-1/2 rotate-6 rounded-full bg-gold/10 blur-3xl" aria-hidden />
       <div className="section-shell">
         <div className="relative isolate overflow-hidden rounded-3xl border border-gold/25 bg-ink/70 px-8 py-10 shadow-card backdrop-blur lg:px-12 lg:py-14">
@@ -16,13 +21,13 @@ const CTA = () => {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#booking"
+              <button
+                onClick={openBooking}
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-gold px-6 py-3 text-base font-semibold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-gold-soft"
               >
                 Book Now
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </button>
               <Link
                 href="#contact"
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-gold px-6 py-3 text-base font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-gold/10"

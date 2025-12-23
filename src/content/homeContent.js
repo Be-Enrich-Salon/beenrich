@@ -3,41 +3,61 @@ export const homeContent = {
         slides: [
             {
                 id: 1,
-                image: "/images/hero/womenhaircare.jpg",
-                title: "Hair Studio",
-                subtitle: "Precision cuts and styling tailored to your individuality.",
-                position: "center top",
+                image: "/images/hero/men-hair-care-responsive.webp",
+                title: "Men Hair Care",
+                subtitle: "Precision cuts and styling for the modern man.",
+                position: "center",
+                slug: "men-hair-care",
             },
             {
                 id: 2,
-                image: "/images/hero/facial.webp",
-                title: "Skin & Glow Rituals",
-                subtitle: "Personalised skin rituals for a healthy, luminous glow.",
-                position: "center 30%",
+                image: "/images/hero/women-hair-care-responsive.webp",
+                title: "Women Hair Care",
+                subtitle: "Artistic styling and nourishing rituals.",
+                position: "center 20%",
+                slug: "women-hair-care",
             },
             {
                 id: 3,
-                image: "/images/hero/bride.jpg",
-                title: "Bridal & Groom Makeovers",
-                subtitle: "Timeless magnificent looks for your special day.",
-                position: "center 35%",
+                image: "/images/services/chemical-treatment-men-women-hero.webp",
+                title: "Chemical Treatments",
+                subtitle: "Advanced transformations for men & women.",
+                position: "center",
+                slug: "chemical-treatments",
             },
             {
                 id: 4,
-                image: "/images/hero/body-spa.webp",
-                title: "Body Spa & Relaxation",
-                subtitle: "Holistic therapies designed to de-stress and restore balance.",
-                position: "center",
+                image: "/images/packages/royal-bride.webp",
+                title: "Personal Grooming & Makeup",
+                subtitle: "Flawless artistry for every occasion.",
+                position: "center top",
+                slug: "grooming-makeup",
             },
             {
                 id: 5,
-                image: "/images/gallery/grooming-moment.webp",
-                title: "Personal Grooming & Nail Care",
-                subtitle: "Flawless grooming essentials and expert nail care.",
-                position: "center 70%",
+                image: "/images/services/skin-care-hero.webp",
+                title: "Skin Care",
+                subtitle: "Rejuvenating rituals for radiant skin.",
+                position: "center 30%",
+                slug: "skin-care",
+            },
+            {
+                id: 6,
+                image: "/images/hero/manicure-pedicure-hero.webp",
+                title: "Manicure & Pedicure",
+                subtitle: "Indulgent hand and foot care.",
+                position: "center",
+                slug: "pedicure-manicure",
+            },
+            {
+                id: 7,
+                image: "/images/packages/bridal-groom-hero.webp",
+                title: "Bridal & Groom",
+                subtitle: "Exquisite journeys for your special day.",
+                position: "center 50%",
+                slug: "grooming-makeup",
             },
         ]
-
     },
     stats: {
         items: [
@@ -163,6 +183,7 @@ export const homeContent = {
         badge: "Signature Packages",
         title: "Exquisite Grooming Journeys",
         description: "From everyday grooming to luxury and bridal experiences, our packages are thoughtfully designed to suit every style and celebration.",
+        heroImage: "/images/packages/bridal-groom-hero.webp",
         items: [
             {
                 name: "Classic",
@@ -182,7 +203,7 @@ export const homeContent = {
             {
                 name: "Luxury",
                 price: "₹12,500",
-                image: "/images/services/menhaircare.webp",
+                image: "/images/packages/royal.webp",
                 includes: [
                     "Hair Cut",
                     "Shaving",
@@ -230,7 +251,7 @@ export const homeContent = {
             {
                 name: "Elegant Bride",
                 price: "₹22,000",
-                image: "/images/packages/elegant-bride.webp",
+                image: "/images/gallery/bridal-portrait.webp",
                 includes: [
                     "Hair Cut",
                     "Shine Treatment",
@@ -270,7 +291,7 @@ export const homeContent = {
         subtitleAccent: "timeless beauty",
         images: [
             {
-                src: "/images/hero/bride.jpg",
+                src: "/images/gallery/bridal-portrait.webp",
                 alt: "Bridal Portrait",
                 category: "Bridal",
                 ratio: "3/4"
@@ -288,13 +309,7 @@ export const homeContent = {
                 ratio: "4/3"
             },
             {
-                src: "/images/gallery/editorial-fashion.webp",
-                alt: "Editorial Fashion",
-                category: "Fashion",
-                ratio: "3/5"
-            },
-            {
-                src: "/images/gallery/salon-ambience.webp",
+                src: "/images/gallery/engin-akyurt-Ix4D4-8cQUU-unsplash.webp",
                 alt: "Luxury Salon Ambience",
                 category: "Salon",
                 ratio: "16/9"
@@ -305,6 +320,12 @@ export const homeContent = {
                 category: "Grooming",
                 ratio: "4/5"
             },
+            {
+                src: "/images/gallery/kalpa-mahagamage-I3y-aJ4DWng-unsplash.webp",
+                alt: "Portrait Photography",
+                category: "Portrait",
+                ratio: "3/4"
+            }
         ],
     },
     contact: {
@@ -316,11 +337,11 @@ export const homeContent = {
             description: "Visit our luxury salon for a transformative experience. We are here to assist you with all your beauty and grooming needs.",
             address: {
                 label: "Address",
-                value: ["123 Luxury Lane, Golden Enclave,", "New Delhi, India 110001"]
+                value: "Serving you across Vijayawada, Guntur, Ongole, and Tenali."
             },
             phone: {
                 label: "Phone",
-                value: "+91 8125944445"
+                value: "+91 81259 44445"
             },
             email: {
                 label: "Email",
@@ -328,7 +349,7 @@ export const homeContent = {
             },
             hours: {
                 label: "Working Hours",
-                value: "Mon - Sun: 10:00 AM - 9:00 PM"
+                value: "Mon - Sun: 9:00 AM - 9:00 PM"
             }
         },
         form: {
@@ -340,46 +361,54 @@ export const homeContent = {
             messageLabel: "Message (Optional)",
             submitText: "Book Appointment",
             serviceOptions: [
-                { label: "Bridal Makeup", value: "bridal" },
-                { label: "Hair Styling", value: "hair" },
-                { label: "Skincare Treatment", value: "skincare" },
-                { label: "Grooming", value: "grooming" }
+                { label: "Men's Haircut & Styling", value: "men-hair" },
+                { label: "Women's Haircut & Styling", value: "women-hair" },
+                { label: "Chemical Treatments (Color/Straightening)", value: "chemical" },
+                { label: "Bridal & Groom Makeup", value: "grooming" },
+                { label: "Advanced Skin Care & Facials", value: "skincare" },
+                { label: "Luxury Manicure & Pedicure", value: "pedicure-manicure" },
+                { label: "Relaxing Body Spa", value: "spa" }
             ]
         }
     },
     footer: {
         brandName: "Be Enrich",
-        tagline: "Premium salon and spa experiences that blend artistry, science, and heartfelt hospitality.",
+        tagline: "Experience the art of luxury grooming. Where precision meets indulgence.",
         socials: {
             instagram: "https://instagram.com",
             facebook: "https://facebook.com",
             twitter: "https://twitter.com"
         },
         explore: {
-            title: "Explore",
+            title: "Quick Links",
             links: [
-                { label: "Services", href: "/#services" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Locations", href: "/locations" },
+                { label: "Services", href: "/services" },
                 { label: "Signature Packages", href: "/#packages" },
-                { label: "Our Work", href: "/#gallery" },
-                { label: "About Us", href: "/about" }
+                { label: "Our Work", href: "/#gallery" }
             ]
         },
-        support: {
-            title: "Support",
+        services: {
+            title: "Our Services",
             links: [
-                { label: "Book Appointment", href: "/#booking" },
-                { label: "Privacy Policy", href: "#" },
-                { label: "Terms of Service", href: "#" },
-                { label: "FAQ", href: "#" }
+                { label: "Men Hair Care", href: "/services/men-hair-care" },
+                { label: "Women Hair Care", href: "/services/women-hair-care" },
+                { label: "Chemical Treatments", href: "/services/chemical-treatments" },
+                { label: "Grooming & Make Up", href: "/services/grooming-makeup" },
+                { label: "Skin Care", href: "/services/skin-care" },
+                { label: "Pedicure & Manicure", href: "/services/pedicure-manicure" },
+                { label: "Body SPA & Reflexology", href: "/services/body-spa-reflexology" }
             ]
         },
         contact: {
-            title: "Contact Us",
-            address: "2nd Floor, Shop No 12,13A, Trendset Mall, Sai Nagar, Kala Nagar, Acharya Ranga Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520008",
-            phone: "+91 8125944445",
+            title: "Visit Us",
+            address: "Serving you across Vijayawada, Guntur, Ongole, and Tenali.",
+            phone: "+91 81259 44445",
             email: "enrich.ap@gmail.com"
         },
-        copyright: "Be Enrich Salon. All rights reserved.",
+        copyright: "© 2025 Be Enrich Salon. All rights reserved.",
         designedBy: "Designed with Elegance"
     },
     testimonials: {
@@ -389,29 +418,29 @@ export const homeContent = {
         items: [
             {
                 id: 1,
-                name: "Priya R.",
-                quote: "The staff are very professional and friendly. I loved the (hair cut) and facial. The salon is clean and relaxing.",
-                service: "Hair & Skin Care",
+                name: "Lakshmi P.",
+                quote: "The best salon in Vijayawada! Their hair spa treatment completely transformed my dry hair. The staff is so polite and the ambiance is pure luxury.",
+                service: "Signature Hair Spa",
                 rating: 5
             },
             {
                 id: 2,
-                name: "Anjali M.",
-                quote: "Finally found a salon that understands curly hair! The stylist took their time to explain the process and the results are amazing.",
-                service: "Hair Styling",
+                name: "Sravani K.",
+                quote: "I visited the Guntur branch for a facial, and the glow is real! They use genuine premium products and the massage was incredibly relaxing.",
+                service: "Radiance Facial",
                 rating: 5
             },
             {
                 id: 3,
-                name: "Rohan K.",
-                quote: "The best grooming experience I've had in Delhi. Professional, precise, and a very premium atmosphere.",
+                name: "Arjun Reddy",
+                quote: "Finally a premium grooming place in Ongole. The haircut and beard styling were on point. Great vibe and professional service.",
                 service: "Men's Grooming",
                 rating: 5
             },
             {
                 id: 4,
-                name: "Sanya D.",
-                quote: "Their bridal makeup is absolutely stunning. They made me feel so comfortable and I looked exactly how I dreamed.",
+                name: "Kavya M.",
+                quote: "Be Enrich in Tenali made my wedding day perfect. The bridal makeup was subtle yet stunning, exactly how I wanted it. Highly recommended!",
                 service: "Bridal Makeup",
                 rating: 5
             }
@@ -420,7 +449,7 @@ export const homeContent = {
     brands: {
         title: "Our Trusted Partners",
         subtitle: "Collaborating with the world's finest beauty brands",
-        sideImage: "/images/brands/productimages.webp",
+        sideImage: "/images/brands/sissor.png",
         items: [
             { name: "Algotherm", logo: "/images/brands/algotherm-logo-horizontal.webp" },
             { name: "Skeyndor", logo: "/images/brands/skr_logo-black_cr.webp" },
@@ -430,9 +459,11 @@ export const homeContent = {
             { name: "Wella Professionals", logo: "/images/brands/wella-logo.webp" },
             { name: "M.A.C", logo: "/images/brands/MAC-Cosmetics-Logo.webp" },
             { name: "Schwarzkopf Professional", logo: "/images/brands/Science-Create-Beauty-Logo-Black.webp" },
-            { name: "L'Oréal Professionnel", logo: "/images/brands/OIP.webp" },
-            { name: "O3+", logo: "/images/brands/OIP (2).webp" },
-            { name: "KooSwalla", logo: "/images/brands/LOGO.webp" }
+            { name: "O3+", logo: "/images/brands/o3.webp" },
+            { name: "KooSwalla", logo: "/images/brands/LOGO.webp" },
+            { name: "Luchiana", logo: "/images/brands/luchiana-1914125123.webp" },
+            { name: "Maybelline", logo: "/images/brands/Maybelline-Logo.svg.png" },
+            { name: "Nykaa", logo: "/images/brands/Nykaa_New_Logo.svg.png" }
         ]
     },
 };

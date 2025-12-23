@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import dynamic from "next/dynamic";
 import Hero from "@/components/home/Hero/Hero";
 import Stats from "@/components/home/Stats";
-import BookingContainer from "@/components/booking/BookingContainer";
-import { Calendar } from "lucide-react";
+// Floating booking handled globally via GlobalBookingButton
 
 // Lazy load below-the-fold components with optimized loading
 const Features = dynamic(() => import("@/components/home/Features"), {
@@ -48,11 +46,6 @@ const ContactSection = dynamic(() => import("@/components/contact/ContactSection
 
 
 export default function HomePage() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const toggleBooking = () => {
-    setIsBookingOpen(!isBookingOpen);
-  };
 
   return (
     <>
@@ -70,18 +63,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
 
-      {/* Floating Book Button */}
-      <button
-        onClick={toggleBooking}
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 bg-gold text-ink rounded-full font-bold uppercase tracking-wider text-sm shadow-2xl hover:shadow-glow hover:scale-110 transition-all duration-300 animate-pulse hover:animate-none"
-        aria-label="Book Appointment"
-      >
-        <Calendar className="h-5 w-5" />
-        <span className="hidden sm:inline">Book Now</span>
-      </button>
-
-      {/* Booking Modal */}
-      {isBookingOpen && <BookingContainer toggleBooking={toggleBooking} />}
+      {/* Global booking button renders via RootLayout */}
     </>
   );
 }

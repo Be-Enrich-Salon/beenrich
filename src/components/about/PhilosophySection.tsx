@@ -23,7 +23,7 @@ const PhilosophySection = () => {
                             <p className="text-lg text-stone leading-relaxed mb-6">
                                 {aboutContent.introduction.description}
                             </p>
-                            <div className="p-8 border-l-4 border-gold bg-mist/10 italic text-xl text-ink/80 font-serif">
+                            <div className="p-8 border-l-4 border-gold bg-mist/10 italic text-xl text-ink/80 font-display">
                                 &quot;{aboutContent.philosophy.quote}&quot;
                             </div>
                             <p className="mt-6 text-stone">
@@ -37,6 +37,7 @@ const PhilosophySection = () => {
                             alt="Salon Interior"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-700"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                     </div>
                 </div>

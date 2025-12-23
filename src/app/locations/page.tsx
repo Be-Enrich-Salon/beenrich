@@ -14,6 +14,8 @@ const locations = [
     image: "/images/locations/vijayawada.webp",
     mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
+    staticMap: "/images/maps/vij.png",
+    pinPosition: { left: "35%", top: "50%", }, // Adjusted to left side
   },
   {
     name: "Guntur",
@@ -22,6 +24,7 @@ const locations = [
     image: "/images/locations/guntur.webp",
     mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
+    staticMap: "/images/maps/guntur.png",
   },
   {
     name: "Ongole",
@@ -30,6 +33,7 @@ const locations = [
     image: "/images/locations/ongole.webp",
     mapEmbed: "https://maps.google.com/maps?q=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
+    staticMap: "/images/maps/ongole.png",
   },
   {
     name: "Tenali",
@@ -38,6 +42,7 @@ const locations = [
     image: "/images/locations/tenali.webp",
     mapEmbed: "https://maps.google.com/maps?q=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh",
+    staticMap: "/images/maps/tenali.png",
   },
 ];
 
@@ -67,15 +72,15 @@ export default function LocationsPage() {
             <p className="text-lg md:text-xl text-mist/80 max-w-3xl leading-relaxed">
               Experience world-class salon and spa services at any of our four premium studios. Each location maintains our signature standards of hygiene, hospitality, and expert care.
             </p>
-            <div className="flex flex-wrap gap-3 text-sm text-mist/80 pt-4">
+            <div className="flex flex-wrap gap-3 text-sm text-mist/80 pt-3">
               <span className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 backdrop-blur">
                 <Clock className="h-4 w-4 text-gold" />
-                Mon–Sun: 10:00 AM – 9:00 PM
+                Mon–Sun: 9:00 AM – 9:00 PM
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 backdrop-blur">
+              <a href="tel:+918125944445" className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 backdrop-blur hover:bg-paper/20 transition-colors">
                 <Phone className="h-4 w-4 text-gold" />
                 +91 81259 44445
-              </span>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -89,81 +94,92 @@ export default function LocationsPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`flex flex-col gap-8 lg:gap-16 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              }`}
+            transition={{ duration: 0.6, delay: index * 0.08 }}
+            className="relative overflow-hidden rounded-3xl border border-gold/20 bg-gradient-to-br from-paper via-mist to-white shadow-card"
           >
-            {/* Image Section */}
-            <div className="w-full lg:w-1/2">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
-                <Image
-                  src={location.image}
-                  alt={`Be Enrich ${location.name} Branch`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
-              </div>
-            </div>
+            <div className="pointer-events-none absolute -left-16 top-10 h-40 w-40 rounded-full bg-gold/10 blur-[80px]" />
+            <div className="pointer-events-none absolute -right-24 -bottom-10 h-52 w-52 rounded-full bg-gold-soft/15 blur-[90px]" />
 
-            {/* Content Section */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
-              <div className="space-y-3">
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-gold">
-                  <Image src="/favicon.png" alt="Pin" width={16} height={16} className="object-contain" />
-                  Studio {index + 1}
-                </span>
-                <h2 className="text-3xl md:text-5xl font-display text-ink">
+            <div className="p-6 md:p-8 lg:p-10 space-y-6 relative z-10">
+              {/* Meta chips */}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-3 py-2 text-xs font-semibold shadow-card">
+                  <MapPin className="h-4 w-4 text-gold" />
                   {location.name}
-                </h2>
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/80 text-ink px-3 py-2 text-xs font-semibold border border-gold/30">
+                  <Clock className="h-4 w-4 text-gold" />
+                  Mon–Sun: 9:00 AM – 9:00 PM
+                </span>
               </div>
 
-              <p className="text-lg text-charcoal/80 leading-relaxed">
-                {location.description}
-              </p>
+              {/* Media row: image + map */}
+              <div className="grid gap-4 lg:grid-cols-2">
+                <div className="relative overflow-hidden rounded-2xl shadow-card border border-white/40 bg-ink/80 aspect-[4/3]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+                  <Image
+                    src={location.image}
+                    alt={`Be Enrich ${location.name} Branch`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                  />
+                  <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2 text-xs text-paper">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1">
+                      Premium Salon & Spa
+                    </span>
+                  </div>
+                </div>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <Image src="/favicon.png" alt="Pin" width={20} height={20} className="shrink-0 mt-1 object-contain" />
-                  <p className="text-base text-charcoal/70 leading-relaxed">
-                    {location.address}
-                  </p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-sm text-charcoal/70">
+                    <span className="font-semibold text-ink">Find us</span>
+                    <span className="text-black">Live map</span>
+                  </div>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gold/25 shadow-inner bg-paper group">
+                    <iframe
+                      src={location.mapEmbed}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Map of Be Enrich ${location.name}`}
+                      className="absolute inset-0 transition-all duration-500"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link
-                  href={location.mapLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper transition hover:bg-gold hover:text-ink hover:shadow-glow"
-                >
-                  <Navigation className="h-4 w-4" />
-                  Get Directions
-                </Link>
-                <Link
-                  href="tel:+918125944445"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-gold/30 px-6 py-3 text-sm font-semibold text-ink transition hover:border-gold hover:bg-gold/5"
-                >
-                  <Phone className="h-4 w-4" />
-                  Call Branch
-                </Link>
-              </div>
+              {/* Full-width content */}
+              <div className="space-y-3 bg-white/80 backdrop-blur rounded-2xl border border-gold/25 p-5 shadow-card">
+                <h2 className="text-3xl md:text-4xl font-display text-ink">{location.name}</h2>
+                <p className="text-base md:text-lg text-charcoal/80 leading-relaxed">{location.description}</p>
+                <div className="flex items-start gap-3 text-charcoal/80">
+                  <MapPin className="h-5 w-5 text-gold shrink-0 mt-1" />
+                  <p className="leading-relaxed">{location.address}</p>
+                </div>
 
-              {/* Embedded Map */}
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-gold/20 shadow-sm mt-4">
-                <iframe
-                  src={location.mapEmbed}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map of Be Enrich ${location.name}`}
-                  className="absolute inset-0"
-                />
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Link
+                    href={location.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition hover:bg-gold hover:text-ink hover:shadow-glow"
+                  >
+                    <Navigation className="h-4 w-4" />
+                    Get Directions
+                  </Link>
+
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event("open-booking"))}
+                    className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-paper hover:shadow-glow"
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -194,12 +210,13 @@ export default function LocationsPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 shrink-0">
-              <Link
-                href="/#booking"
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event("open-booking"))}
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-ink transition hover:bg-paper hover:shadow-glow"
               >
                 Book Now
-              </Link>
+              </button>
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-wider text-paper transition hover:bg-white/10"

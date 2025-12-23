@@ -55,7 +55,7 @@ export default function GallerySection() {
         <section id="gallery" className="py-24 bg-paper text-ink relative overflow-hidden">
             <div className="section-shell">
                 {/* Header */}
-                <div className="text-center mb-16 max-w-3xl mx-auto">
+                <div className="text-center mb-6 md:mb-16 max-w-3xl mx-auto">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -72,6 +72,23 @@ export default function GallerySection() {
                     >
                         {gallery.subtitleStart} <span style={{ color: colors.goldDim }}>{gallery.subtitleAccent}</span>
                     </motion.p>
+                    {/* Mobile nav buttons under subtitle (side-by-side) */}
+                    <div className="mt-2 flex md:hidden justify-end gap-3">
+                        <button
+                            onClick={scrollPrev}
+                            className="p-3 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm"
+                            aria-label="Scroll left"
+                        >
+                            <ChevronLeft size={20} />
+                        </button>
+                        <button
+                            onClick={scrollNext}
+                            className="p-3 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm"
+                            aria-label="Scroll right"
+                        >
+                            <ChevronRight size={20} />
+                        </button>
+                    </div>
                 </div>
 
                 {/* Horizontal Carousel */}
@@ -80,7 +97,12 @@ export default function GallerySection() {
                     <div
                         ref={scrollContainerRef}
                         className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 no-scrollbar"
-                        style={{ scrollBehavior: "smooth", scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        style={{ 
+                            scrollBehavior: "smooth", 
+                            scrollbarWidth: 'none', 
+                            msOverflowStyle: 'none',
+                            WebkitOverflowScrolling: 'touch'
+                        }}
                     >
                         {galleryImages.map((image, index) => (
                             <motion.div
@@ -119,30 +141,23 @@ export default function GallerySection() {
                         ))}
                     </div>
 
-                    {/* Left Arrow */}
+                    {/* Mobile overlay buttons removed; using header buttons instead */}
+
+                    {/* Desktop: Left button on left, Right button on right */}
                     <button
                         onClick={scrollPrev}
-                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm opacity-0 group-hover/gallery:opacity-100 md:opacity-100"
+                        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm"
                         aria-label="Scroll left"
                     >
                         <ChevronLeft size={24} />
                     </button>
-
-                    {/* Right Arrow */}
                     <button
                         onClick={scrollNext}
-                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm opacity-0 group-hover/gallery:opacity-100 md:opacity-100"
+                        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-4 bg-ink/70 hover:bg-gold text-gold hover:text-ink rounded-full transition-all duration-300 shadow-lg backdrop-blur-sm"
                         aria-label="Scroll right"
                     >
                         <ChevronRight size={24} />
                     </button>
-                </div>
-
-                {/* Slide Counter */}
-                <div className="flex justify-center items-center gap-2 mt-8">
-                    <span className="text-sm text-stone/60">
-                        {currentSlide + 1} / {galleryImages.length}
-                    </span>
                 </div>
             </div>
 
@@ -195,6 +210,7 @@ export default function GallerySection() {
                                 fill
                                 className="object-contain"
                                 priority
+                                sizes="100vw"
                             />
                             <div className="absolute bottom-[-1.5rem] left-0 w-full text-center text-white/70 text-sm tracking-wider font-light">
                                 {galleryImages[selectedImage].alt}

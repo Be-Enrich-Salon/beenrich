@@ -6,6 +6,7 @@ export interface HeroSlide {
   title: string;
   subtitle: string;
   position?: string;
+  slug?: string;
 }
 
 export const heroSlides: HeroSlide[] = homeContent.hero.slides; 

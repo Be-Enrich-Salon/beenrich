@@ -3,6 +3,8 @@ import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
+import GlobalBookingButton from "@/components/booking/GlobalBookingButton";
+import { BookingProvider } from "@/context/BookingContext";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -38,9 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="bg-paper text-ink antialiased">
-        <Navbar />
-        {children}
-        <Footer />
+        <BookingProvider>
+          <Navbar />
+          {children}
+          <GlobalBookingButton />
+          <Footer />
+        </BookingProvider>
       </body>
     </html>
   );

@@ -24,7 +24,7 @@ const Hero = () => {
             <AnimatePresence mode='popLayout'>
                 <motion.div
                     key={heroSlides[currentSlide].id}
-                    initial={{ opacity: 0, scale: 1.05 }}
+                    initial={{ opacity: 0, scale: 1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}

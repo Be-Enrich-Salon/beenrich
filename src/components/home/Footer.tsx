@@ -19,13 +19,13 @@ const Footer = () => {
               {footer.tagline}
             </p>
             <div className="flex items-center space-x-4">
-              <a href={footer.socials?.instagram || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Instagram">
+              <a href={footer.socials?.instagram || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram size={18} />
               </a>
-              <a href={footer.socials?.facebook || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Facebook">
+              <a href={footer.socials?.facebook || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                 <Facebook size={18} />
               </a>
-              <a href={footer.socials?.twitter || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Twitter">
+              <a href={footer.socials?.twitter || "#"} className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-ink transition-all duration-300" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                 <Twitter size={18} />
               </a>
             </div>
@@ -43,11 +43,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Services */}
           <div className="space-y-6">
-            <h3 className="text-lg font-medium text-white">{footer.support.title}</h3>
+            <h3 className="text-lg font-medium text-white">{footer.services.title}</h3>
             <ul className="space-y-3 text-mist/70">
-              {footer.support.links.map((link) => (
+              {footer.services.links.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-gold transition-colors duration-300">{link.label}</Link>
                 </li>
@@ -64,11 +64,11 @@ const Footer = () => {
                 <span>{footer.contact.address}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone size= {18} style={{ color: colors.gold }} className="flex-shrink-0" />
+                <Phone size={18} style={{ color: colors.gold }} className="flex-shrink-0" />
                 <a href={`tel:${footer.contact.phone.replace(/\s+/g, "")}`} className="hover:text-gold transition-colors">{footer.contact.phone}</a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail size= {18} style={{ color: colors.gold }} className="flex-shrink-0" />
+                <Mail size={18} style={{ color: colors.gold }} className="flex-shrink-0" />
                 <a href={`mailto:${footer.contact.email}`} className="hover:text-gold transition-colors">{footer.contact.email}</a>
               </li>
             </ul>
@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-sm text-mist/50">
           <p>&copy; {new Date().getFullYear()} {footer.copyright}</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <span className="hover:text-white transition-colors cursor-pointer">{footer.designedBy}</span>
+            <span className="hover:text-white transition-colors">{footer.designedBy}</span>
           </div>
         </div>
       </div>

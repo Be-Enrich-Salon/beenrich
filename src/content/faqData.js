@@ -11,6 +11,14 @@ export const faqData = {
         {
             question: "What hair products do you use?",
             answer: "We strictly use premium professional brands like L'Oréal Professionnel, Schwarzkopf, and Bed Head to ensure the best health for your hair."
+        },
+        {
+            question: "How do I choose the right hairstyle for my face shape?",
+            answer: "Our expert stylists conduct a personalized consultation before every cut. We analyze your face shape and hair texture to recommend styles that enhance your best features."
+        },
+        {
+            question: "Do you offer grey coverage for men?",
+            answer: "Yes, we offer discreet grey blending and full coverage options that look natural and fade gradually without harsh root lines."
         }
     ],
     "women-hair-care": [
@@ -25,6 +33,14 @@ export const faqData = {
         {
             question: "Do I need a consultation before a major color change?",
             answer: "Yes, we highly recommend a complimentary consultation so our experts can assess your hair health and discuss realistic results."
+        },
+        {
+            question: "What is the difference between highlights and balayage?",
+            answer: "Highlights use foils for a uniform lift from root to tip, while balayage is a freehand technique creating a softer, sun-kissed, and more natural gradient."
+        },
+        {
+            question: "How can I prevent my hair color from fading?",
+            answer: "Use color-protecting shampoos, wash with cool water, and avoid excessive heat styling. We also recommend scheduling regular gloss treatments to refresh the tone."
         }
     ],
     "chemical-treatments": [
@@ -39,6 +55,14 @@ export const faqData = {
         {
             question: "Do you perform patch tests?",
             answer: "Absolutely. For sensitive scalps or new clients, we recommend a patch test 24 hours prior to the chemical service."
+        },
+        {
+            question: "Can I color my hair after a straightening treatment?",
+            answer: "It is generally recommended to wait at least 2 weeks after a chemical texture service before applying color to preserve hair integrity."
+        },
+        {
+            question: "Will straightening make my hair completely flat?",
+            answer: "It depends on the treatment chosen. We offer various options ranging from 'stick straight' to natural movement. Discuss your desired volume with your stylist."
         }
     ],
     "grooming-makeup": [
@@ -53,6 +77,14 @@ export const faqData = {
         {
             question: "What makeup brands do you use?",
             answer: "We use high-end professional brands like MAC, Huda Beauty, Bobbi Brown, and Kryolan for a flawless, long-lasting finish."
+        },
+        {
+            question: "How should I prepare my skin for a makeup appointment?",
+            answer: "Come with a clean, moisturized face. Exfoliating the night before helps create a smooth canvas. Avoid wearing any makeup to the appointment."
+        },
+        {
+            question: "Is threading better than waxing for the face?",
+            answer: "Threading is often preferred for precision on eyebrows and is gentler for those using retinol or acne medications, whereas waxing is great for larger areas like the sides of the face."
         }
     ],
     "skin-care": [
@@ -67,6 +99,14 @@ export const faqData = {
         {
             question: "Is there any downtime after a facial?",
             answer: "Most of our facials leave you glowing immediately. Some intensive treatments may cause slight redness that subsides within a few hours."
+        },
+        {
+            question: "Can I wear makeup after a facial?",
+            answer: "It is best to let your skin breathe for at least 12-24 hours after a facial to allow the active ingredients to work effectively."
+        },
+        {
+            question: "Do you offer facials for men?",
+            answer: "Yes, we have customized facial treatments specifically designed for men's thicker skin texture and concerns like razor burn and ingrown hairs."
         }
     ],
     "pedicure-manicure": [
@@ -81,6 +121,14 @@ export const faqData = {
         {
             question: "Can you remove old acrylics or gel?",
             answer: "Yes, we offer safe removal services that protect your natural nail bed before applying a fresh set."
+        },
+        {
+            question: "What is the difference between a regular and spa pedicure?",
+            answer: "A spa pedicure is a more luxurious experience that includes extended massage, exfoliation, a mask, and often paraffin wax for deep hydration, beyond just nail grooming."
+        },
+        {
+            question: "How do I care for my nails after a manicure?",
+            answer: "Apply cuticle oil daily to keep the skin hydrated and wear gloves when doing household chores to protect your polish and skin."
         }
     ],
     "body-spa-reflexology": [
@@ -95,6 +143,15 @@ export const faqData = {
         {
             question: "Are there any contraindications?",
             answer: "Please inform us if you are pregnant, have high blood pressure, or any recent injuries so we can adjust the treatment for your safety."
+        },
+        {
+            question: "What is the benefit of reflexology?",
+            answer: "Reflexology targets specific pressure points on the feet that correspond to different body organs, helping to improve circulation, reduce stress, and restore balance."
+        },
+        {
+            question: "How much pressure will be used during the massage?",
+            answer: "Your therapist will check in with you regarding pressure preferences. We can adjust from light relaxation to deep tissue firmness based on your comfort."
         }
     ]
 };
+

@@ -11,7 +11,7 @@ export const servicesContent = {
             title: "Men Hair Care",
             description:
                 "Precision cuts, sharp beard styling, and restorative hair treatments tailored for the modern man.",
-            image: "/images/hero/men-hair-hero.webp",
+            image: "/images/services/menhero.jpg",
         },
         {
             id: "women-hair-care",
@@ -46,7 +46,7 @@ export const servicesContent = {
             title: "Pedicure & Manicure",
             description:
                 "Indulgent hand and foot care rituals involving exfoliation, massage, and expert nail grooming.",
-            image: "/images/hero/body-spa.webp",
+            image: "/images/services/luxe_pedicure_scene.webp",
         },
         {
             id: "body-spa-reflexology",
@@ -72,16 +72,16 @@ export const servicesContent = {
             ],
         },
         popularServices: [
-            { title: "Creative Director Cut", description: "Expert styling by our top director.", image: "/images/services/bearddesign.webp" },
-            { title: "Beard Design", description: "Sharp, sculpted beard shaping.", image: "/images/services/men-hair-hero.webp" },
-            { title: "Global Color", description: "Rich, natural-looking color.", image: "/images/services/globalhair.webp" },
-            { title: "Hair Spa", description: "Deep conditioning therapy.", image: "/images/hero/hair-spa.webp" },
+            { title: "Creative Director Cut", description: "Expert styling by our top director.", image: "/images/services/hairstyle-men.webp" },
+            { title: "Beard Design", description: "Sharp, sculpted beard shaping.", image: "/images/services/bearddesign.webp" },
+            { title: "Global Color", description: "Rich, natural-looking color.", image: "/images/services/alfa-men-color.webp" },
+            { title: "Hair Spa", description: "Deep conditioning therapy.", image: "/images/services/men-hair-spa-responsive.webp" },
         ],
         detailedSections: [
             {
                 title: "Haircut & Styling",
                 description: "Experience precision and style with our range of haircuts.",
-                image: "/images/services/men-hair-hero.webp",
+                image: "/images/services/menhero.jpg",
                 items: [
                     { name: "Creative Director", price: "₹999" },
                     { name: "Creative Stylist", price: "₹799" },
@@ -96,7 +96,7 @@ export const servicesContent = {
             {
                 title: "Hair Spa",
                 description: "Revitalize your scalp and hair health with our premium spa therapies.",
-                image: "/images/hero/hair-spa.webp",
+                image: "/images/services/men-hair-spa-responsive.webp",
                 items: [
                     { name: "Hair SPA - Exotic", price: "₹800" },
                     { name: "Hair SPA - Alchemy", price: "₹1500" },
@@ -106,7 +106,7 @@ export const servicesContent = {
             {
                 title: "Color",
                 description: "Enhance your look with our professional color services.",
-                image: "/images/services/chemical-hero.webp",
+                image: "/images/services/men-hair-color-responsive.webp",
                 items: [
                     { name: "Global Color", price: "₹800" },
                     { name: "Crown Highlights", price: "₹1000" },
@@ -118,7 +118,7 @@ export const servicesContent = {
             {
                 title: "Alfaparf Color",
                 description: "Premium Italian color treatments for superior shine and care.",
-                image: "/images/services/globalhair.webp",
+                image: "/images/services/alfa-men-color.webp",
                 items: [
                     { name: "Global Color", price: "₹1200" },
                     { name: "Crown Highlights", price: "₹1200" },
@@ -130,7 +130,7 @@ export const servicesContent = {
             {
                 title: "Head Massage",
                 description: "Relaxing head massages to relieve stress and nourish your scalp.",
-                image: "/images/services/headmen.webp",
+                image: "/images/services/head-massage-responsive.webp",
                 items: [
                     { name: "Olive Oil", price: "₹300" },
                     { name: "Almond Oil", price: "₹300" },
@@ -183,13 +183,13 @@ export const servicesContent = {
             { title: "Creative Haircut", description: "Bespoke cuts by expert stylists.", image: "/images/services/women-hair-hero.webp" },
             { title: "Global Color", description: "Vibrant, long-lasting color.", image: "/images/services/womenhaircolor.webp" },
             { title: "Kerastase Ritual", description: "Luxury hair care treatment.", image: "/images/hero/hair-spa.webp" },
-            { title: "Smoothening", description: "Silky, frizz-free texture.", image: "/images/services/chemical-hero.webp" },
+            { title: "Smoothening", description: "Silky, frizz-free texture.", image: "/images/services/chemical-treatment-men-women-hero.webp" },
         ],
         detailedSections: [
             {
                 title: "Haircut & Styling",
                 description: "Precision cuts that define your personality including wash and blast dry.",
-                image: "/images/services/women-hair-hero.webp",
+                image: "/images/hero/womenhaircare.jpg",
                 items: [
                     { name: "Creative Director", price: "₹1499" },
                     { name: "Creative Stylist", price: "₹1250" },
@@ -216,7 +216,7 @@ export const servicesContent = {
             {
                 title: "Alfaparf Color",
                 description: "Exclusive Italian color range for superior shine and longevity.",
-                image: "/images/services/chemical-hero.webp",
+                image: "/images/services/chemical-treatment-men-women-hero.webp",
                 items: [
                     { name: "Global Color", price: "₹2900" },
                     { name: "Base Color Root Touch up", price: "₹1800" },
@@ -242,7 +242,7 @@ export const servicesContent = {
             {
                 title: "Head Massage",
                 description: "Relaxing oil massages for scalp health.",
-                image: "/images/services/women-hair-hero.webp",
+                image: "/images/services/headmsgwomen.jpg",
                 items: [
                     { name: "Olive Oil", price: "₹600" },
                     { name: "Almond Oil", price: "₹600" },
@@ -268,7 +268,7 @@ export const servicesContent = {
             buttonText: "Book Appointment",
         },
         related: [
-            { id: "chemical-treatments", title: "Treatments", image: "/images/services/chemical-hero.webp" },
+            { id: "chemical-treatments", title: "Treatments", image: "/images/services/chemical-treatment-men-women-hero.webp" },
             { id: "skin-care", title: "Skin Care", image: "/images/hero/facial.webp" },
             { id: "grooming-makeup", title: "Makeup", image: "/images/services/makeup-hero.webp" },
         ]
@@ -278,7 +278,7 @@ export const servicesContent = {
         hero: {
             title: "Chemical Treatments",
             subtitle: "Advanced Texture & Color Transformations",
-            image: "/images/services/chemical-hero.webp",
+            image: "/images/services/chemical-treatment-men-women-hero.webp",
             cta: "Book Consultation",
         },
         intro: {
@@ -289,16 +289,16 @@ export const servicesContent = {
             ],
         },
         popularServices: [
-            { title: "Hair Straightening", description: "Sleek, straight, manageable hair.", image: "/images/services/chemical-hero.webp" },
+            { title: "Hair Straightening", description: "Sleek, straight, manageable hair.", image: "/images/hero/womenhaircare.jpg" },
             { title: "Smoothening", description: "Frizz control and shine.", image: "/images/services/womenhaircolor.webp" },
-            { title: "Keratin Treatment", description: "Restore protein and strength.", image: "/images/hero/hair-spa.webp" },
-            { title: "Hair Botox", description: "Anti-aging for your hair.", image: "/images/services/chemical-hero.webp" },
+            { title: "Keratin Treatment", description: "Restore protein and strength.", image: "/images/services/hair-studio.webp" },
+            { title: "Hair Botox", description: "Anti-aging for your hair.", image: "/images/services/chemical-treatment-men-women-hero.webp" },
         ],
         detailedSections: [
             {
                 title: "Texture Transformation",
                 description: "Long-lasting straightening, smoothening, and perming for a complete look change.",
-                image: "/images/services/womenhaircolor.webp",
+                image: "/images/services/chemical-hero.webp",
                 items: [
                     { name: "Hair Straightening", price: "5000 onwards" },
                     { name: "Hair Smoothening", price: "5000 onwards" },
@@ -308,7 +308,7 @@ export const servicesContent = {
             {
                 title: "Keratin & Repair",
                 description: "Intensive protein treatments to restore strength and shine.",
-                image: "/images/hero/hair-spa.webp",
+                image: "/images/hero/women-hair-care-responsive.webp",
                 items: [
                     { name: "Keratin Treatment (Men)", price: "3000 onwards" },
                     { name: "Keratin Treatment (Women)", price: "5000 onwards" },

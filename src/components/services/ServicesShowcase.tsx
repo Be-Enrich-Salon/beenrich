@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { servicesContent } from "@/content/servicesContent";
 import { homeContent } from "@/content/homeContent";
 import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useBooking } from "@/context/BookingContext";
 
 const categoryHighlights: Record<string, string[]> = {
   "men-hair-care": [
@@ -56,11 +57,12 @@ const categoryTags: Record<string, string[]> = {
 };
 
 const ServicesShowcase = () => {
-  const { categories } = servicesContent;
+  const categories = servicesContent.categories;
+  const { openBooking } = useBooking();
 
   return (
-    <section id="services-menu" className="bg-paper py-16 md:py-24">
-      <div className="section-shell space-y-12">
+    <section id="services-menu" className="bg-paper py-16 md:py-20">
+      <div className="section-shell space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="flex items-center justify-center gap-3 text-gold text-[10px] font-bold uppercase tracking-[0.4em]">
             <span className="h-px w-8 bg-gold/40" />
@@ -75,7 +77,7 @@ const ServicesShowcase = () => {
           </p>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           {categories.map((category, idx) => {
             const detail = (servicesContent as Record<string, any>)[category.id] || {};
             const preview = homeContent.servicesPreview.items.find((item: any) => item.id === category.id);
@@ -91,13 +93,16 @@ const ServicesShowcase = () => {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 className="overflow-hidden rounded-3xl bg-white shadow-card border border-gold/10"
               >
-                <div className={`flex flex-col ${idx % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
-                  <div className="relative w-full lg:w-1/2 min-h-[260px] lg:min-h-[360px]">
+                <div className="flex flex-col lg:flex-row">
+                  <div
+                    className={`relative w-full lg:w-1/2 aspect-[4/3] lg:aspect-auto lg:min-h-full order-1 ${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                      }`}
+                  >
                     <Image
                       src={heroImage}
                       alt={category.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" />
@@ -113,11 +118,11 @@ const ServicesShowcase = () => {
                     </div>
                   </div>
 
-                  <div className="w-full lg:w-1/2 p-8 md:p-10 space-y-6">
-                    <div className="flex items-center gap-3 text-gold text-xs font-bold uppercase tracking-[0.4em]">
-                      <Sparkles className="h-4 w-4" />
-                      <span>Category {String(idx + 1).padStart(2, "0")}</span>
-                    </div>
+                  <div
+                    className={`w-full lg:w-1/2 p-8 md:p-10 space-y-6 order-2 ${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                      }`}
+                  >
+
                     <h3 className="text-2xl md:text-3xl font-display text-ink leading-tight">{category.title}</h3>
                     <p className="text-charcoal/80 text-base leading-relaxed">{category.description}</p>
                     {detail.hero?.subtitle && (
@@ -169,12 +174,12 @@ const ServicesShowcase = () => {
                         View details
                         <ArrowRight className="h-4 w-4" />
                       </Link>
-                      <Link
-                        href="/#booking"
+                      <button
+                        onClick={openBooking}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-ink/10 text-ink text-xs font-bold uppercase tracking-[0.3em] hover:border-gold hover:text-gold transition"
                       >
                         Book this service
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

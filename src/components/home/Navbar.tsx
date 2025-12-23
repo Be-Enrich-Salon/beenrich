@@ -22,14 +22,14 @@ const Navbar = () => {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="section-shell pt-6">
-        <div className="flex items-center justify-between rounded-full border border-gold/20 bg-ink/70 px-6 py-1 shadow-card backdrop-blur">
-          <Link href="/" className="relative h-14 w-44 flex items-center z-50">
+        <div className="flex items-center justify-between rounded-full border border-gold/20 bg-ink/70 px-6 py-1 shadow-card backdrop-blur overflow-visible">
+          <Link href="/" className="relative h-20 w-56 flex items-center z-50 -my-3">
             <Image
               src="/images/hero/logosig.png"
               alt="Be Enrich"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 120px, 176px"
+              sizes="(max-width: 768px) 150px, 224px"
               priority
             />
           </Link>

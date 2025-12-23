@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Sparkles, Clock3, CheckCircle2 } from "lucide-react";
 import { servicesContent } from "@/content/servicesContent";
+import { useBooking } from "@/context/BookingContext";
 
 const categoryHighlights: Record<string, string[]> = {
   "men-hair-care": [
@@ -44,6 +45,7 @@ const categoryHighlights: Record<string, string[]> = {
 
 const ServicesOverview = () => {
   const { categories } = servicesContent;
+  const { openBooking } = useBooking();
 
   return (
     <section id="services-overview" className="bg-paper py-16 md:py-24 border-b border-stone/50">
@@ -130,12 +132,12 @@ const ServicesOverview = () => {
               <h3 className="text-2xl md:text-3xl font-display text-ink">Category snapshots</h3>
               <p className="text-charcoal/70">Quick clarity on what each service line covers.</p>
             </div>
-            <a
-              href="/#booking"
+            <button
+              onClick={openBooking}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gold text-ink text-xs font-bold uppercase tracking-[0.2em] hover:shadow-glow transition"
             >
               Book a consultation
-            </a>
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

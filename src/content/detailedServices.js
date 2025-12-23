@@ -184,7 +184,7 @@ export const detailedServicesContent = {
         id: "chemical-treatments",
         title: "Chemical Treatments",
         description: "Specialized chemical rituals for both men and women, ensuring lasting transformation and structural hair integrity.",
-        heroImage: "/images/services/chemical-hero.webp",
+        heroImage: "/images/services/chemical-treatment-men-women-hero.webp",
         benefits: [
             { title: "Hair Transformation", description: "Achieve the texture and look you desire, from sleek straight to defined curls." },
             { title: "Damage Protection", description: "We prioritize hair health, using protective bonding agents during all chemical processes." },

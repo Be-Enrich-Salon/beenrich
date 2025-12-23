@@ -5,13 +5,16 @@ import ServicesHero from "@/components/services/ServicesHero";
 import ServicesShowcase from "@/components/services/ServicesShowcase";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Phone, MessageCircle, Calendar } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
+import { useBooking } from "@/context/BookingContext";
 
 const SignaturePackages = dynamic(() => import("@/components/home/SignaturePackages"), {
     loading: () => <div className="h-96 bg-paper" />,
 });
 
 const ServicesPage = () => {
+    const { openBooking } = useBooking();
+
     return (
         <main className="min-h-screen bg-paper">
             <ServicesHero />
@@ -49,7 +52,7 @@ const ServicesPage = () => {
                         </div>
 
                         {/* Action Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                             <motion.div
                                 whileHover={{ y: -4 }}
                                 className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
@@ -71,28 +74,7 @@ const ServicesPage = () => {
                                 </div>
                             </motion.div>
 
-                            <motion.div
-                                whileHover={{ y: -4 }}
-                                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
-                            >
-                                <div className="flex flex-col items-center text-center space-y-4">
-                                    <div className="h-14 w-14 rounded-full bg-gold/10 flex items-center justify-center">
-                                        <MessageCircle className="h-6 w-6 text-gold" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-display text-paper mb-2">WhatsApp</h4>
-                                        <p className="text-sm text-mist/60 mb-4">Quick & convenient</p>
-                                        <a
-                                            href="https://wa.me/918125944445"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="text-gold text-sm font-semibold hover:underline"
-                                        >
-                                            Chat Now
-                                        </a>
-                                    </div>
-                                </div>
-                            </motion.div>
+
 
                             <motion.div
                                 whileHover={{ y: -4 }}
@@ -105,12 +87,12 @@ const ServicesPage = () => {
                                     <div>
                                         <h4 className="text-lg font-display text-paper mb-2">Book Online</h4>
                                         <p className="text-sm text-mist/60 mb-4">Instant confirmation</p>
-                                        <Link
-                                            href="/#booking"
+                                        <button
+                                            onClick={openBooking}
                                             className="text-gold text-sm font-semibold hover:underline"
                                         >
                                             Reserve Slot
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                             </motion.div>
@@ -118,14 +100,14 @@ const ServicesPage = () => {
 
                         {/* Primary CTA */}
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <Link
-                                href="/#booking"
+                            <button
+                                onClick={openBooking}
                                 className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-gold text-ink rounded-full font-bold uppercase tracking-wider text-sm transition-all hover:shadow-glow hover:-translate-y-1 overflow-hidden"
                             >
                                 <span className="relative z-10">Book Appointment</span>
                                 <Calendar className="h-5 w-5 relative z-10" />
                                 <div className="absolute inset-0 bg-paper translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
-                            </Link>
+                            </button>
                             <Link
                                 href="/locations"
                                 className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-white/20 text-paper rounded-full font-bold uppercase tracking-wider text-sm transition-all hover:bg-white/10 hover:border-gold"
