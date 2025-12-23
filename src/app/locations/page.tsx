@@ -55,7 +55,7 @@ export default function LocationsPage() {
         <div className="absolute top-[-10%] right-[5%] h-80 w-80 rounded-full bg-gold/10 blur-[120px]" />
         <div className="absolute bottom-[-15%] left-[0%] h-96 w-96 rounded-full bg-gold-soft/10 blur-[140px]" />
 
-        <div className="section-shell relative z-10 py-20 md:py-28">
+        <div className="section-shell relative z-10 pt-32 pb-20 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -408,7 +408,7 @@ export const homeContent = {
             phone: "+91 81259 44445",
             email: "enrich.ap@gmail.com"
         },
-        copyright: "© 2025 Be Enrich Salon. All rights reserved.",
+        copyright: "Be Enrich Salon. All rights reserved.",
         designedBy: "Designed with Elegance"
     },
     testimonials: {

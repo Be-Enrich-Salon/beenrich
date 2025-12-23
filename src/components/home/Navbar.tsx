@@ -23,7 +23,7 @@ const Navbar = () => {
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="section-shell pt-6">
         <div className="flex items-center justify-between rounded-full border border-gold/20 bg-ink/70 px-6 py-1 shadow-card backdrop-blur overflow-visible">
-          <Link href="/" className="relative h-20 w-56 flex items-center z-50 -my-3">
+          <Link href="/" className="relative h-20 w-40 md:w-56 flex items-center z-50 -my-3">
             <Image
               src="/images/hero/logosig.png"
               alt="Be Enrich"
