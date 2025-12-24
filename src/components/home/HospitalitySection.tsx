@@ -46,10 +46,10 @@ const HospitalitySection = () => {
     const rotate4 = useTransform(scrollYProgress, [0, 0.5, 1], [2, 0, -2]);
 
     const branches = [
-        { name: "Vijayawada", image: "/images/locations/vijayawada.webp" },
-        { name: "Guntur", image: "/images/locations/ongole.webp" },
-        { name: "Ongole", image: "/images/locations/guntur.webp" },
-        { name: "Tenali", image: "/images/locations/tenali.webp" }
+        { name: "Vijayawada", image: "/images/saloon/vijayawada.webp" },
+        { name: "Guntur", image: "/images/saloon/guntur1.webp" },
+        { name: "Ongole", image: "/images/saloon/tenali.webp" },
+        { name: "Tenali", image: "/images/saloon/ongole.webp" }
     ];
 
     return (

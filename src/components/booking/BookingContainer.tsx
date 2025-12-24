@@ -11,7 +11,8 @@ interface BookingContainerProps {
 }
 
 const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) => {
-    const [step, setStep] = useState<'gender' | 'services'>('gender');
+    const [step, setStep] = useState<'location' | 'gender' | 'services'>('location');
+    const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
     const [selectedGender, setSelectedGender] = useState<'Male' | 'Female' | null>(null);
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
@@ -30,6 +31,18 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
         name: item.title,
     }));
 
+    const locationsList = [
+        "Guntur",
+        "Vijayawada",
+        "Ongole",
+        "Tenali"
+    ];
+
+    const handleLocationSelect = (location: string) => {
+        setSelectedLocation(location);
+        setStep('gender');
+    };
+
     const handleGenderSelect = (gender: 'Male' | 'Female') => {
         setSelectedGender(gender);
         setStep('services');
@@ -45,7 +58,7 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
 
     const sendToWhatsApp = () => {
         const phoneNumber = "918125944445";
-        let message = `Hello Be Enrich! \n\nI want to book an appointment.\n\n*Gender:* ${selectedGender}\n*Services request:* \n`;
+        let message = `Hello Be Enrich! \n\nI want to book an appointment.\n\n*Location:* ${selectedLocation || "Not selected"}\n*Gender:* ${selectedGender}\n*Services request:* \n`;
 
         if (selectedServices.length > 0) {
             selectedServices.forEach((service) => {
@@ -65,6 +78,9 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
         if (step === 'services') {
             setStep('gender');
             setSelectedServices([]);
+            setSelectedGender(null);
+        } else if (step === 'gender') {
+            setStep('location');
             setSelectedGender(null);
         }
     };
@@ -91,9 +107,21 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                 <hr />
 
                 <div className="h-[420px] relative">
-                    {step === 'gender' ? (
+                    {step === 'location' ? (
                         <div className="gender-buttons-container">
-
+                            <h2>Choose Location</h2>
+                            {locationsList.map((location) => (
+                                <button
+                                    key={location}
+                                    className="male-button" // reuse gender button style
+                                    onClick={() => handleLocationSelect(location)}
+                                >
+                                    {location}
+                                </button>
+                            ))}
+                        </div>
+                    ) : step === 'gender' ? (
+                        <div className="gender-buttons-container">
                             <h2>Choose Gender</h2>
                             <button
                                 className="male-button"
@@ -117,7 +145,6 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                                 <h3>Select Services</h3>
                                 <div style={{ width: 32 }}></div>
                             </div>
-
                             <div className="services-list" data-lenis-prevent>
                                 <ul>
                                     {servicesList.map((service) => {
@@ -135,7 +162,6 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                                     })}
                                 </ul>
                             </div>
-
                             <button
                                 className="whatsapp-button"
                                 onClick={sendToWhatsApp}

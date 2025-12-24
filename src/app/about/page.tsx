@@ -7,7 +7,7 @@ import InvestorVision from "@/components/about/InvestorVision";
 import Script from "next/script";
 
 export const metadata = {
-    title: "About Us | Be Enrich Beauty Salon",
+    title: "About Us | Be Enrich Signature Salon",
     description: "Learn about our journey, philosophy, and commitment to excellence at Be Enrich Beauty Salon.",
 };
 // this is the baout componet 
@@ -29,10 +29,11 @@ export default function AboutPage() {
                 }}
             />
             <AboutHero />
+
             <PhilosophySection />
             <TimelineSection />
             <ChairmanMessage />
             <InvestorVision />
-        </main>
+        </main >
     );
 }

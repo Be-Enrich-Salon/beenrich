@@ -16,7 +16,9 @@ const locations = [
         overview: "Brindavan Gardens, Guntur",
         phone: "+91 81259 44445",
         mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007"
+        mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
+        staticMap: "/images/locations/guntur.png",
+        pinPosition: { left: "50%", top: "50%" }
     },
     {
         name: "Vijayawada",
@@ -24,7 +26,9 @@ const locations = [
         overview: "Trendset Mall, Benz Circle, Vijayawada",
         phone: "+91 81259 44445",
         mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008"
+        mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
+        staticMap: "/images/locations/vijayawada.png",
+        pinPosition: { left: "60%", top: "50%" }
     },
     {
         name: "Ongole",
@@ -32,7 +36,9 @@ const locations = [
         overview: "M.K.R. Plaza, Manganmuru Road, Ongole",
         phone: "+91 81259 44445",
         mapEmbed: "https://maps.google.com/maps?q=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002&z=15&output=embed",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002"
+        mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
+        staticMap: "/images/locations/ongole.png",
+        pinPosition: { left: "55%", top: "50%" }
     },
     {
         name: "Tenali",
@@ -40,7 +46,9 @@ const locations = [
         overview: "Near Saibaba Temple, Boss Road, Tenali",
         phone: "+91 81259 44445",
         mapEmbed: "https://maps.google.com/maps?q=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh&z=15&output=embed",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh"
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh",
+        staticMap: "/images/locations/tenali.png",
+        pinPosition: { left: "45%", top: "45%" }
     }
 ];
 
@@ -96,7 +104,7 @@ export default function ContactPage() {
                                     className="flex items-center justify-center gap-2 w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-[#25D366]/20"
                                 >
                                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-                                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.828-.907-.372-1.527-.962-1.586-1.036-.058-.075-.602-.802-.602-1.529 0-.728.375-1.093.51-1.228.149-.149.349-.19.481-.19.131 0 .22.001.323.003.103.002.22.002.329.271.121.29.418 1.021.454 1.096.036.075.06.166.012.261-.048.095-.083.159-.151.244-.055.068-.112.138-.174.204-.067.071-.137.149-.06.284.075.131.334.552.72.896.496.442.923.585 1.056.649.134.065.217.06.291-.018.077-.08.319-.372.404-.5.086-.129.176-.107.294-.064.12.043.766.36 0.899.426.133.065.22.097.251.152.031.055.031.321-.113.726z" />
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                                     </svg>
                                     Book on WhatsApp
                                 </button>
@@ -117,9 +125,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Locations List (Optional but requested kept in earlier turns, user said "same section", implies main design) 
-                 Keeping locations below but matching dark theme 
-             */}
+            {/* Locations List */}
             <section className="py-20 bg-gradient-to-b from-charcoal to-ink">
                 <div className="section-shell">
                     <div className="text-center mb-12">
@@ -137,19 +143,68 @@ export default function ContactPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="bg-gradient-to-br from-charcoal to-stone/30 rounded-xl overflow-hidden shadow-lg border border-gold/10 flex flex-col group hover:border-gold/30 transition-all"
                             >
-                                <div className="h-64 w-full relative">
-                                    <iframe
-                                        src={location.mapEmbed}
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        className="absolute inset-0 transition-all duration-500"
-                                    />
+                                <div className="space-y-3 p-4">
+                                    <div className="flex items-center justify-end text-sm text-charcoal/70">
+                                        <span className="text-mist/60 text-xs">Live map</span>
+                                    </div>
+                                    <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gold/25 shadow-inner bg-paper group">
+                                        <Image
+                                            src={location.staticMap}
+                                            alt={`Map location of ${location.name}`}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        {/* Centered Map Pin */}
+                                        <div
+                                            className="absolute transform -translate-x-1/2 -translate-y-full flex flex-col items-center"
+                                            style={{
+                                                left: (location as any).pinPosition?.left || "50%",
+                                                top: (location as any).pinPosition?.top || "50%",
+                                                zIndex: 20
+                                            }}
+                                        >
+                                            <motion.div
+                                                initial={{ scale: 0, opacity: 0 }}
+                                                whileInView={{ scale: 1, opacity: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 200,
+                                                    damping: 15,
+                                                    delay: 0.3,
+                                                }}
+                                                className="flex flex-col items-center origin-bottom scale-[0.65] md:scale-100"
+                                            >
+                                                <motion.div
+                                                    animate={{
+                                                        y: [0, -8, 0],
+                                                    }}
+                                                    transition={{
+                                                        duration: 2,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut",
+                                                    }}
+                                                    className="flex flex-col items-center"
+                                                >
+                                                    {/* Custom two-line label for all locations */}
+                                                    <div className="flex flex-col items-center mb-1">
+                                                        <div className="bg-white text-black text-[13px] font-bold px-3 py-1 rounded shadow-lg whitespace-nowrap border border-gray-300 leading-tight text-center">
+                                                            Be Enrich<br />
+                                                            <span className="font-normal text-[11px] tracking-wide">Signature Salon</span>
+                                                        </div>
+                                                        <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-white drop-shadow" />
+                                                    </div>
+
+                                                    {/* Map Pin */}
+                                                    <div className="flex justify-center filter drop-shadow-lg">
+                                                        <MapPin className="h-9 w-9 text-gold fill-gold/20 stroke-[2.5px]" />
+                                                    </div>
+                                                </motion.div>
+                                            </motion.div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+                                <div className="p-6 md:p-8 flex-1 flex flex-col justify-between pt-0">
                                     <div>
                                         <div className="flex justify-between items-start mb-2">
                                             <h3 className="text-2xl font-display text-paper">{location.name}</h3>

@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-mist/90 lg:flex">
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-mist/90 md:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -50,7 +50,7 @@ const Navbar = () => {
           {/* Desktop Book Now Button */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center justify-center rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-gold-soft"
+            className="hidden md:inline-flex items-center justify-center rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-gold-soft"
           >
             Book Now
           </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={toggleMenu}
-            className="lg:hidden z-50 p-2 text-gold"
+            className="md:hidden z-50 p-2 text-gold"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -68,8 +68,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden fixed inset-0 top-24 bg-ink/95 backdrop-blur-xl z-40 animate-in fade-in slide-in-from-top-4 duration-300">
-            <nav className="flex flex-col items-center gap-8 pt-12 px-6">
+          <div className="md:hidden fixed inset-0 top-24 bottom-0 bg-ink/95 backdrop-blur-xl z-40 animate-in fade-in slide-in-from-top-4 duration-300 overflow-y-auto">
+            <nav className="flex flex-col items-center gap-8 pt-12 px-6 pb-20">
               {links.map((link) => (
                 <Link
                   key={link.href}

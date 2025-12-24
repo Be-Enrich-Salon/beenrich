@@ -16,7 +16,7 @@ const ChairmanMessage = () => {
                     <div className="w-full lg:w-5/12 relative">
                         <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl border border-gold/20">
                             <Image
-                                src="/images/about/chairman.jpg"
+                                src="/images/about/chairman.webp"
                                 alt="Chairman"
                                 fill
                                 className="object-cover hover:scale-105 transition-transform duration-700"

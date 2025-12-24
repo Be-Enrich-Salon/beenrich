@@ -11,7 +11,7 @@ const locations = [
     name: "Guntur",
     description: "Located in the heart of Brindavan Gardens, our Guntur branch combines accessibility with tranquility. This intimate studio specializes in personalized consultations and bridal services, perfect for your special occasions.",
     address: "D.No. 5-87-50/1 1'st Floor, Lakshmipuram Main Rd, opp. Seetharamaiah High School, Brindavan Gardens, Guntur, Andhra Pradesh 522007",
-    image: "/images/saloon/saloon1.webp",
+    image: "/images/saloon/guntur1.webp",
     mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
     staticMap: "/images/locations/guntur.png",
@@ -21,7 +21,7 @@ const locations = [
     name: "Vijayawada",
     description: "Our flagship studio at Trendset Mall offers a spacious, modern salon experience with premium facilities and ample parking. Experience the full range of Be Enrich services in a luxurious setting designed for your comfort.",
     address: "2nd Floor, Shop No 12,13A, Trendset Mall, Kala Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520008.",
-    image: "/images/saloon/saloon2.webp",
+    image: "/images/saloon/vijayawada.webp",
     mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
     staticMap: "/images/locations/vijayawada.png",
@@ -31,7 +31,7 @@ const locations = [
     name: "Ongole",
     description: "Conveniently situated at M.K.R. Plaza on Manganmuru Road, our Ongole location provides easy access to world-class grooming services. The studio features state-of-the-art equipment and a relaxing ambience.",
     address: "M.K.R. Plaza, D.No. 7-1205, 2ND floor , upstairs Axis Bank, Manganmuru Road , ongole , ongole , Andhra Pradesh , 523002",
-    image: "/images/saloon/saloon3.webp",
+    image: "/images/saloon/tenali.webp",
     mapEmbed: "https://maps.google.com/maps?q=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
     staticMap: "/images/locations/ongole.png",
@@ -42,7 +42,7 @@ const locations = [
     name: "Tenali",
     description: "Our newest branch near Saibaba Temple brings premium salon and spa services to Tenali. Enjoy a serene atmosphere with dedicated specialists offering personalized hair, skin, and wellness treatments.",
     address: "4th Floor, Door No 19-15-47, shiridi squre, Near Opo Saibaba Temple, Boss Road, Tenali, Andhra Pradesh 522201.",
-    image: "/images/saloon/saloon1.webp",
+    image: "/images/saloon/ongole.webp",
     mapEmbed: "https://maps.google.com/maps?q=4th+Floor,+Door+No+19-15-47,+shiridi+squre,+Near+Opo+Saibaba+Temple,+Boss+Road,+Tenali,+Andhra+Pradesh+522201&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=4th+Floor,+Door+No+19-15-47,+shiridi+squre,+Near+Opo+Saibaba+Temple,+Boss+Road,+Tenali,+Andhra+Pradesh+522201",
     staticMap: "/images/locations/tenali.png",
@@ -126,7 +126,7 @@ export default function LocationsPage() {
                     src={location.image}
                     alt={`Be Enrich ${location.name} Branch`}
                     fill
-                    className={`object-cover hover:scale-105 transition-transform duration-700 ${location.name === "Guntur" ? "opacity-60 object-center" : ""}`}
+                    className={`object-cover hover:scale-105 transition-transform duration-700 ${location.name === "Guntur" ? "opacity-50 object-center" : ""}`}
                     sizes="(max-width: 1024px) 100vw, 900px"
                   />
                   {location.name === "Guntur" && (
@@ -141,7 +141,7 @@ export default function LocationsPage() {
                   )}
                   <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2 text-xs text-paper">
                     <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1">
-                      Premium Salon & Spa
+                      Luxury Salon & Spa
                     </span>
                   </div>
                 </div>
@@ -190,15 +190,14 @@ export default function LocationsPage() {
                           }}
                           className="flex flex-col items-center"
                         >
-                          {/* Optional Google Maps style label */}
-                          {(location as any).pinLabel && (
-                            <div className="flex flex-col items-center mb-1">
-                              <div className="bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded shadow-lg whitespace-nowrap border border-gray-300">
-                                {(location as any).pinLabel}
-                              </div>
-                              <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-white drop-shadow" />
+                          {/* Custom two-line label for all locations */}
+                          <div className="flex flex-col items-center mb-1">
+                            <div className="bg-white text-black text-[13px] font-bold px-3 py-1 rounded shadow-lg whitespace-nowrap border border-gray-300 leading-tight text-center">
+                              Be Enrich<br />
+                              <span className="font-normal text-[11px] tracking-wide">Signature Salon</span>
                             </div>
-                          )}
+                            <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-white drop-shadow" />
+                          </div>
 
                           {/* Map Pin */}
                           <div className="flex justify-center filter drop-shadow-lg">

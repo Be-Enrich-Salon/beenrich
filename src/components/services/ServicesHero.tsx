@@ -28,7 +28,7 @@ const ServicesHero = () => {
                 className="absolute inset-0"
             >
                 <Image
-                    src="/images/hero/men-hair-care-responsive.webp"
+                    src="/images/services/men-hair-hero.webp"
                     alt="Be Enrich Services"
                     fill
                     sizes="100vw"

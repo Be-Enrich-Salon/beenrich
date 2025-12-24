@@ -1,17 +1,24 @@
-
 const sharp = require('sharp');
 const fs = require('fs');
+const path = require('path');
 
-const images = [
-    "c:/Users/vanib/OneDrive/Desktop/berich/public/images/about/aboutmain.png",
-    "c:/Users/vanib/OneDrive/Desktop/berich/public/images/about/aboutsec.png"
-];
+const directory = 'c:/Users/vanib/OneDrive/Desktop/berich/public/images/saloon';
 
-images.forEach(imgPath => {
-    const webpPath = imgPath.replace('.png', '.webp');
-    sharp(imgPath)
-        .toFormat('webp')
-        .toFile(webpPath)
-        .then(() => console.log(`Converted ${imgPath} to ${webpPath}`))
-        .catch(err => console.error(`Error converting ${imgPath}:`, err));
+fs.readdir(directory, (err, files) => {
+    if (err) {
+        return console.error('Unable to scan directory: ' + err);
+    }
+
+    files.forEach(file => {
+        if (path.extname(file).toLowerCase() === '.jpg' || path.extname(file).toLowerCase() === '.png') {
+            const inputPath = path.join(directory, file);
+            const outputPath = path.join(directory, path.parse(file).name + '.webp');
+
+            sharp(inputPath)
+                .toFormat('webp')
+                .toFile(outputPath)
+                .then(() => console.log(`Converted ${file} to .webp`))
+                .catch(err => console.error(`Error converting ${file}:`, err));
+        }
+    });
 });

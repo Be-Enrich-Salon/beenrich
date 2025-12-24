@@ -62,7 +62,7 @@ export const homeContent = {
     stats: {
         items: [
             { label: "Years Experience", value: "22+" },
-            { label: "Happy Customers", value: "25k" },
+            { label: "Happy Customers", value: "25k +" },
             { label: "Rating", value: "4.7/5" },
             { label: "Premium Products", value: "150+" },
         ],
@@ -325,7 +325,20 @@ export const homeContent = {
                 alt: "Portrait Photography",
                 category: "Portrait",
                 ratio: "3/4"
-            }
+            },
+            {
+                src: "/images/gallery/textured+crop.webp",
+                alt: "Textured Crop Styling",
+                category: "Men's Grooming",
+                ratio: "1/1"
+            },
+            {
+                src: "/images/gallery/attractive-bearded-indian.webp",
+                alt: "Attractive Bearded Indian",
+                category: "Men's Grooming",
+                ratio: "4/5"
+            },
+            // Removed Salon Styling image
         ],
     },
     contact: {

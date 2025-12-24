@@ -11,6 +11,7 @@ export default function BookingForm() {
         name: "",
         phone: "",
         email: "",
+        location: "",
         service: "",
         message: ""
     });
@@ -26,8 +27,8 @@ export default function BookingForm() {
         e.preventDefault();
 
         // Validation
-        if (!formData.name || !formData.phone || !formData.service) {
-            alert("Please fill in the required fields (Name, Phone, Service).");
+        if (!formData.name || !formData.phone || !formData.service || !formData.location) {
+            alert("Please fill in the required fields (Name, Phone, Location, Service).");
             return;
         }
 
@@ -58,6 +59,7 @@ export default function BookingForm() {
                     name: "",
                     phone: "",
                     email: "",
+                    location: "",
                     service: "",
                     message: ""
                 });
@@ -115,6 +117,27 @@ export default function BookingForm() {
                     placeholder={form.emailLabel}
                     className={inputClasses}
                 />
+            </div>
+
+            {/* Location Selection */}
+            <div className="relative">
+                <select
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    className={`${inputClasses} appearance-none`}
+                    required
+                >
+                    <option value="" disabled>Select Location</option>
+                    {["Vijayawada", "Guntur", "Ongole", "Tenali"].map((loc) => (
+                        <option key={loc} className="bg-[#222]" value={loc}>
+                            {loc}
+                        </option>
+                    ))}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                    <ChevronDown size={16} />
+                </div>
             </div>
 
             {/* Service Selection */}
