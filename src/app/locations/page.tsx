@@ -15,7 +15,7 @@ const locations = [
     mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
     staticMap: "/images/locations/guntur.png",
-    pinPosition: { left: "45%", top: "40%" },
+    pinPosition: { left: "50%", top: "50%" },
   },
   {
     name: "Vijayawada",
@@ -25,7 +25,7 @@ const locations = [
     mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
     staticMap: "/images/locations/vijayawada.png",
-    pinPosition: { left: "45%", top: "30%" },
+    pinPosition: { left: "60%", top: "50%" },
   },
   {
     name: "Ongole",
@@ -36,7 +36,7 @@ const locations = [
     mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
     staticMap: "/images/locations/ongole.png",
     pinLabel: "Be Enrich Salon and Spa",
-    pinPosition: { left: "40%", top: "30%" },
+    pinPosition: { left: "55%", top: "50%" },
   },
   {
     name: "Tenali",
@@ -47,7 +47,7 @@ const locations = [
     mapLink: "https://www.google.com/maps/search/?api=1&query=4th+Floor,+Door+No+19-15-47,+shiridi+squre,+Near+Opo+Saibaba+Temple,+Boss+Road,+Tenali,+Andhra+Pradesh+522201",
     staticMap: "/images/locations/tenali.png",
     pinLabel: "Be Enrich Signature Salon",
-    pinPosition: { left: "30%", top: "30%" },
+    pinPosition: { left: "45%", top: "45%" },
   },
 ];
 
@@ -158,45 +158,55 @@ export default function LocationsPage() {
                       className="object-cover"
                     />
                     {/* Centered Map Pin */}
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 15,
-                        delay: 0.3,
-                        y: {
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }
-                      }}
-                      animate={{
-                        y: [0, -10, 0],
-                      }}
-                      className="absolute transform -translate-x-1/2 -translate-y-full"
+                    {/* Map Pin Container - Anchored */}
+                    <div
+                      className="absolute transform -translate-x-1/2 -translate-y-full flex flex-col items-center"
                       style={{
                         left: (location as any).pinPosition?.left || "50%",
                         top: (location as any).pinPosition?.top || "50%",
+                        zIndex: 20
                       }}
                     >
-                      {/* Optional Google Maps style label */}
-                      {(location as any).pinLabel && (
-                        <div className="flex flex-col items-center mb-1">
-                          <div className="bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded shadow-lg whitespace-nowrap border border-gray-300">
-                            {(location as any).pinLabel}
-                          </div>
-                          <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-white drop-shadow" />
-                        </div>
-                      )}
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 15,
+                          delay: 0.3,
+                        }}
+                        className="flex flex-col items-center origin-bottom scale-[0.65] md:scale-100"
+                      >
+                        <motion.div
+                          animate={{
+                            y: [0, -8, 0],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                          className="flex flex-col items-center"
+                        >
+                          {/* Optional Google Maps style label */}
+                          {(location as any).pinLabel && (
+                            <div className="flex flex-col items-center mb-1">
+                              <div className="bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded shadow-lg whitespace-nowrap border border-gray-300">
+                                {(location as any).pinLabel}
+                              </div>
+                              <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-white drop-shadow" />
+                            </div>
+                          )}
 
-                      {/* Map Pin */}
-                      <div className="flex justify-center filter drop-shadow-lg">
-                        <MapPin className="h-9 w-9 text-gold fill-gold/20 stroke-[2.5px]" />
-                      </div>
-                    </motion.div>
+                          {/* Map Pin */}
+                          <div className="flex justify-center filter drop-shadow-lg">
+                            <MapPin className="h-9 w-9 text-gold fill-gold/20 stroke-[2.5px]" />
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
