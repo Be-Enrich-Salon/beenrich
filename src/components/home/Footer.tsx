@@ -76,11 +76,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-sm text-mist/50">
+        <div className="pt-8 border-t border-white/5 flex justify-center items-center text-sm text-mist/50">
           <p>&copy; {new Date().getFullYear()} {footer.copyright}</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <span className="hover:text-white transition-colors">{footer.designedBy}</span>
-          </div>
         </div>
       </div>
     </footer>

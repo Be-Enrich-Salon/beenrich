@@ -56,14 +56,6 @@ const ChairmanMessage = () => {
 
                         <div className="pt-8 flex items-center gap-6">
                             <div className="h-px flex-1 bg-gold/20" />
-                            <div className="text-right">
-                                <p className="text-2xl font-handwriting text-gold mb-1">
-                                    Signature
-                                </p>
-                                <p className="text-sm font-bold uppercase tracking-widest text-ink">
-                                    Chairman & Founder
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>

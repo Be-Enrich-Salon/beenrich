@@ -22,7 +22,7 @@ const ServicesPage = () => {
             <SignaturePackages />
 
             {/* Enhanced Call to Action Section */}
-            <section className="section-shell pb-24 md:pb-32">
+            <section className="section-shell pb-24 md:pb-32 pt-32 md:pt-48 lg:pt-56">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const ServicesPage = () => {
                             </div>
 
                             <h3 className="text-3xl md:text-5xl lg:text-6xl font-display text-paper leading-tight">
-                                Ready for Your <span className="text-gold italic">Transformation?</span>
+                                Ready for Your <span className="text-gold-dim italic">Transformation?</span>
                             </h3>
 
                             <p className="text-base md:text-lg text-mist/70 font-light leading-relaxed max-w-2xl mx-auto">

@@ -205,7 +205,7 @@ export const detailedServicesContent = {
     },
     "grooming-makeup": {
         id: "grooming-makeup",
-        title: "Personal Grooming & Make Up",
+        title: "Personal Grooming & Bridal Make Up",
         description: "Eager to experiment with different style that match your personality? Be Enrich offers replenishing treatments for women and men. Make-up trends for the day or night, and for the season or special occasion.",
         heroImage: "/images/services/makeup-hero.webp",
         benefits: [
@@ -264,7 +264,7 @@ export const detailedServicesContent = {
     },
     "pedicure-manicure": {
         id: "pedicure-manicure",
-        title: "Pedicure & Manicure",
+        title: "Pedicure, Manicure & Nail art",
         description: "Indulgent hand and foot care rituals involving exfoliation, massage, and expert nail grooming.",
         heroImage: "/images/hero/body-spa.webp",
         benefits: [

@@ -47,8 +47,8 @@ const HospitalitySection = () => {
 
     const branches = [
         { name: "Vijayawada", image: "/images/locations/vijayawada.webp" },
-        { name: "Guntur", image: "/images/locations/guntur.webp" },
-        { name: "Ongole", image: "/images/locations/ongole.webp" },
+        { name: "Guntur", image: "/images/locations/ongole.webp" },
+        { name: "Ongole", image: "/images/locations/guntur.webp" },
         { name: "Tenali", image: "/images/locations/tenali.webp" }
     ];
 
@@ -113,8 +113,8 @@ const HospitalitySection = () => {
                                 className="object-cover brightness-110 transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-center">
-                                <p className="px-4 py-2 rounded-full bg-ink/70 text-paper font-display text-2xl shadow-card border border-gold/50">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+                                <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-3xl font-bold shadow-lg border-2 border-gold">
                                     {branches[0].name}
                                 </p>
                             </div>
@@ -136,13 +136,15 @@ const HospitalitySection = () => {
                                 className="object-cover brightness-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-center">
-                                <p className="px-4 py-2 rounded-full bg-ink/70 text-paper font-display text-xl shadow-card border border-gold/50">
-                                    {branches[1].name}
-                                </p>
-                            </div>
                         </div>
                     </motion.div>
+
+                    {/* Guntur Name Badge - Outside container for full visibility */}
+                    <div className="absolute top-[32%] left-[8%] z-50 text-center">
+                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                            {branches[1].name}
+                        </p>
+                    </div>
 
                     {/* Image 3 - Ongole (Behind and partially shown) */}
                     <motion.div
@@ -159,13 +161,15 @@ const HospitalitySection = () => {
                                 className="object-cover brightness-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-center">
-                                <p className="px-4 py-2 rounded-full bg-ink/70 text-paper font-display text-xl shadow-card border border-gold/50">
-                                    {branches[2].name}
-                                </p>
-                            </div>
                         </div>
                     </motion.div>
+
+                    {/* Ongole Name Badge - Right side for visibility */}
+                    <div className="absolute top-[32%] right-[20%] z-50 text-center">
+                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                            {branches[2].name}
+                        </p>
+                    </div>
 
                     {/* Image 4 - Tenali (Behind and partially shown) */}
                     <motion.div
@@ -182,13 +186,15 @@ const HospitalitySection = () => {
                                 className="object-cover brightness-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-center">
-                                <p className="px-4 py-2 rounded-full bg-ink/70 text-paper font-display text-xl shadow-card border border-gold/50">
-                                    {branches[3].name}
-                                </p>
-                            </div>
                         </div>
                     </motion.div>
+
+                    {/* Tenali Name Badge - Outside container for full visibility */}
+                    <div className="absolute top-[34%] right-[6%] z-50 text-center">
+                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                            {branches[3].name}
+                        </p>
+                    </div>
 
                 </div>
 

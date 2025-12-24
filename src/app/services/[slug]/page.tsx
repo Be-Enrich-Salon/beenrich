@@ -328,7 +328,7 @@ const ServiceDetail = () => {
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-90 transition duration-500 group-hover:opacity-70" />
 
                                         <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                            <div className="transform transition duration-500 translate-y-2 group-hover:translate-y-0">
+                                            <div className="transform transition duration-500">
                                                 <div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-gold/90">
                                                     <div className="h-px w-6 bg-gold" />
                                                     <span>Popular Choice</span>
@@ -347,7 +347,7 @@ const ServiceDetail = () => {
                                                     >
                                                         <Plus className="h-5 w-5" />
                                                     </button>
-                                                    <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
+                                                    <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-100 transition duration-300">
                                                         Book this
                                                     </span>
                                                 </div>

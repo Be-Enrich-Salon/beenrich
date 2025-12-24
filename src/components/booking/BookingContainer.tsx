@@ -93,7 +93,7 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                 <div className="h-[420px] relative">
                     {step === 'gender' ? (
                         <div className="gender-buttons-container">
-                            
+
                             <h2>Choose Gender</h2>
                             <button
                                 className="male-button"
@@ -118,7 +118,7 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                                 <div style={{ width: 32 }}></div>
                             </div>
 
-                            <div className="services-list">
+                            <div className="services-list" data-lenis-prevent>
                                 <ul>
                                     {servicesList.map((service) => {
                                         const isSelected = selectedServices.includes(service.name);

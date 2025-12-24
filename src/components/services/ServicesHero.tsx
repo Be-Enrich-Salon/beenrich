@@ -89,8 +89,8 @@ const ServicesHero = () => {
                         className="flex flex-wrap items-center gap-8 mb-10 justify-center"
                     >
                         {[
-                            { number: "20+", label: "Years", icon: Award },
-                            { number: "500+", label: "Clients", icon: Users },
+                            { number: "22+", label: "Experience", icon: Award },
+                            { number: "25K+", label: "Clients", icon: Users },
                             { number: "7", label: "Categories", icon: Sparkles }
                         ].map((stat, i) => (
                             <motion.div

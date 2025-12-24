@@ -86,12 +86,7 @@ export default function SignaturePackages() {
                                     style={{ background: `linear-gradient(90deg, transparent, ${colors.gold}, transparent)` }}
                                 />
 
-                                <div className="mb-6 flex items-center gap-3">
-                                    <span className="h-[1px] w-8 bg-gold/50" />
-                                    <span className="text-gold text-sm tracking-wider uppercase font-medium">
-                                        {pkg.includes.length} Services Included
-                                    </span>
-                                </div>
+
 
                                 <ul className="space-y-2 mb-8 flex-grow">
                                     {pkg.includes.map((item, i) => (

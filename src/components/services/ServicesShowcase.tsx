@@ -130,7 +130,7 @@ const ServicesShowcase = () => {
                     )}
 
                     <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">What you get</p>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-gold">What you get</p>
                       <ul className="space-y-2">
                         {(categoryHighlights[category.id] || []).map((item) => (
                           <li key={item} className="flex items-start gap-2 text-sm text-ink/80">
@@ -143,7 +143,7 @@ const ServicesShowcase = () => {
 
                     {subservices.length > 0 && (
                       <div className="space-y-3">
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Popular picks</p>
+                        <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-gold">Popular picks</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {subservices.slice(0, 4).map((item: any, i: number) => (
                             <div

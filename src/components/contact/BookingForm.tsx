@@ -123,7 +123,7 @@ export default function BookingForm() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className={`${inputClasses} appearance-none cursor-pointer`}
+                    className={`${inputClasses} appearance-none`}
                 >
                     <option value="" disabled>Select Service</option>
                     {form.serviceOptions.map((option) => (

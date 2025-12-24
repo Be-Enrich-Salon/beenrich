@@ -29,7 +29,7 @@ export const servicesContent = {
         },
         {
             id: "grooming-makeup",
-            title: "Grooming & Make Up",
+            title: "Grooming & Bridal Make Up",
             description:
                 "Flawless grooming essentials and professional makeup artistry for every celebration.",
             image: "/images/services/makeup-hero.webp",
@@ -43,7 +43,7 @@ export const servicesContent = {
         },
         {
             id: "pedicure-manicure",
-            title: "Pedicure & Manicure",
+            title: "Pedicure, Manicure & Nail art",
             description:
                 "Indulgent hand and foot care rituals involving exfoliation, massage, and expert nail grooming.",
             image: "/images/services/luxe_pedicure_scene.webp",
@@ -73,7 +73,7 @@ export const servicesContent = {
         },
         popularServices: [
             { title: "Creative Director Cut", description: "Expert styling by our top director.", image: "/images/services/hairstyle-men.webp" },
-            { title: "Beard Design", description: "Sharp, sculpted beard shaping.", image: "/images/services/bearddesign.webp" },
+            { title: "Beard Design", description: "Sharp, sculpted beard shaping.", image: "/images/services/men-hair-hero.webp" },
             { title: "Global Color", description: "Rich, natural-looking color.", image: "/images/services/alfa-men-color.webp" },
             { title: "Hair Spa", description: "Deep conditioning therapy.", image: "/images/services/men-hair-spa-responsive.webp" },
         ],
@@ -268,7 +268,7 @@ export const servicesContent = {
             buttonText: "Book Appointment",
         },
         related: [
-            { id: "chemical-treatments", title: "Treatments", image: "/images/services/chemical-treatment-men-women-hero.webp" },
+            { id: "chemical-treatments", title: "Treatments", image: "/images/services/texturetrs.webp" },
             { id: "skin-care", title: "Skin Care", image: "/images/hero/facial.webp" },
             { id: "grooming-makeup", title: "Makeup", image: "/images/services/makeup-hero.webp" },
         ]
@@ -278,7 +278,7 @@ export const servicesContent = {
         hero: {
             title: "Chemical Treatments",
             subtitle: "Advanced Texture & Color Transformations",
-            image: "/images/services/chemical-treatment-men-women-hero.webp",
+            image: "/images/services/chemherobanner.webp",
             cta: "Book Consultation",
         },
         intro: {
@@ -298,7 +298,7 @@ export const servicesContent = {
             {
                 title: "Texture Transformation",
                 description: "Long-lasting straightening, smoothening, and perming for a complete look change.",
-                image: "/images/services/chemical-hero.webp",
+                image: "/images/services/texturetrs.webp",
                 items: [
                     { name: "Hair Straightening", price: "5000 onwards" },
                     { name: "Hair Smoothening", price: "5000 onwards" },
@@ -308,7 +308,7 @@ export const servicesContent = {
             {
                 title: "Keratin & Repair",
                 description: "Intensive protein treatments to restore strength and shine.",
-                image: "/images/hero/women-hair-care-responsive.webp",
+                image: "/images/services/karetinboth.webp",
                 items: [
                     { name: "Keratin Treatment (Men)", price: "3000 onwards" },
                     { name: "Keratin Treatment (Women)", price: "5000 onwards" },
@@ -339,7 +339,7 @@ export const servicesContent = {
     "grooming-makeup": {
         slug: "grooming-makeup",
         hero: {
-            title: "Grooming & Make Up",
+            title: "Grooming & Bridal Make Up",
             subtitle: "Flawless Artistry For Every Occasion",
             image: "/images/services/makeup-hero.webp",
             cta: "Book Appointment",
@@ -452,7 +452,7 @@ export const servicesContent = {
             { title: "Hydra-Facial", description: "Deep cleansing and hydration.", image: "/images/services/hydra_facial_service.webp" },
             { title: "Brightening Therapy", description: "For an even, glowing tone.", image: "/images/services/brightening_therapy_service.webp" },
             { title: "O3+ Clean Up", description: "Premium cleanup for instant fresh look.", image: "/images/services/o3_cleanup_service.webp" },
-            { title: "Detan Pack", description: "Effective sun damage removal.", image: "/images/services/detan_pack_service.webp" },
+            { title: "Detan Pack removal", description: "Effective sun damage removal.", image: "/images/services/detan_pack_service.webp" },
         ],
         detailedSections: [
             {
@@ -527,7 +527,7 @@ export const servicesContent = {
     "pedicure-manicure": {
         slug: "pedicure-manicure",
         hero: {
-            title: "Pedicure & Manicure",
+            title: "Pedicure, Manicure & Nail art",
             subtitle: "Indulgent Hand & Foot Rituals",
             image: "/images/hero/body-spa.webp",
             cta: "Book Appointment",

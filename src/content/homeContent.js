@@ -3,18 +3,18 @@ export const homeContent = {
         slides: [
             {
                 id: 1,
-                image: "/images/hero/men-hair-care-responsive.webp",
+                image: "/images/services/menhaircare.webp",
                 title: "Men Hair Care",
                 subtitle: "Precision cuts and styling for the modern man.",
-                position: "center",
+                position: "center 20%",
                 slug: "men-hair-care",
             },
             {
                 id: 2,
-                image: "/images/hero/women-hair-care-responsive.webp",
+                image: "/images/hero/womenhairservices.png",
                 title: "Women Hair Care",
                 subtitle: "Artistic styling and nourishing rituals.",
-                position: "center 20%",
+                position: "center 10%",
                 slug: "women-hair-care",
             },
             {
@@ -28,7 +28,7 @@ export const homeContent = {
             {
                 id: 4,
                 image: "/images/packages/royal-bride.webp",
-                title: "Personal Grooming & Makeup",
+                title: "Professional Grooming & Makeup",
                 subtitle: "Flawless artistry for every occasion.",
                 position: "center top",
                 slug: "grooming-makeup",
@@ -61,10 +61,10 @@ export const homeContent = {
     },
     stats: {
         items: [
-            { label: "Years Experience", value: "20+" },
-            { label: "Happy Customers", value: "500+" },
-            { label: "Awards Won", value: "100+" },
-            { label: "Premium Products", value: "50+" },
+            { label: "Years Experience", value: "22+" },
+            { label: "Happy Customers", value: "25k" },
+            { label: "Rating", value: "4.7/5" },
+            { label: "Premium Products", value: "150+" },
         ],
     },
     features: {
@@ -97,8 +97,8 @@ export const homeContent = {
         ctaText: "Discover Our Story",
         ctaLink: "/about",
         images: {
-            main: "/images/about/about.webp",
-            secondary: "/images/about/haircut.webp",
+            main: "/images/about/aboutsec.webp",
+            secondary: "/images/about/aboutmain.webp",
             detail: "/images/about/tools.webp",
         },
     },
@@ -149,7 +149,7 @@ export const homeContent = {
             },
             {
                 id: "grooming-makeup",
-                title: "Grooming & Make Up",
+                title: "Grooming & Bridal Make Up",
                 description:
                     "Flawless grooming essentials and professional makeup artistry for every special occasion.",
                 image: "/images/hero/bride.jpg",
@@ -164,7 +164,7 @@ export const homeContent = {
             },
             {
                 id: "pedicure-manicure",
-                title: "Pedicure & Manicure",
+                title: "Pedicure, Manicure & Nail art",
                 description:
                     "Indulgent hand and foot rituals that blend relaxation with expert nail grooming.",
                 image: "/images/services/manicure-pedicure.webp",
@@ -361,13 +361,13 @@ export const homeContent = {
             messageLabel: "Message (Optional)",
             submitText: "Book Appointment",
             serviceOptions: [
-                { label: "Men's Haircut & Styling", value: "men-hair" },
-                { label: "Women's Haircut & Styling", value: "women-hair" },
-                { label: "Chemical Treatments (Color/Straightening)", value: "chemical" },
-                { label: "Bridal & Groom Makeup", value: "grooming" },
-                { label: "Advanced Skin Care & Facials", value: "skincare" },
-                { label: "Luxury Manicure & Pedicure", value: "pedicure-manicure" },
-                { label: "Relaxing Body Spa", value: "spa" }
+                { label: "Men Hair Care", value: "men-hair-care" },
+                { label: "Women Hair Care", value: "women-hair-care" },
+                { label: "Chemical Treatments", value: "chemical-treatments" },
+                { label: "Grooming & Bridal Make Up", value: "grooming-makeup" },
+                { label: "Skin Care", value: "skin-care" },
+                { label: "Pedicure, Manicure & Nail art", value: "pedicure-manicure" },
+                { label: "Body SPA & Reflexology", value: "body-spa-reflexology" }
             ]
         }
     },
@@ -396,9 +396,9 @@ export const homeContent = {
                 { label: "Men Hair Care", href: "/services/men-hair-care" },
                 { label: "Women Hair Care", href: "/services/women-hair-care" },
                 { label: "Chemical Treatments", href: "/services/chemical-treatments" },
-                { label: "Grooming & Make Up", href: "/services/grooming-makeup" },
+                { label: "Grooming & Bridal Make Up", href: "/services/grooming-makeup" },
                 { label: "Skin Care", href: "/services/skin-care" },
-                { label: "Pedicure & Manicure", href: "/services/pedicure-manicure" },
+                { label: "Pedicure, Manicure & Nail art", href: "/services/pedicure-manicure" },
                 { label: "Body SPA & Reflexology", href: "/services/body-spa-reflexology" }
             ]
         },
@@ -408,13 +408,13 @@ export const homeContent = {
             phone: "+91 81259 44445",
             email: "enrich.ap@gmail.com"
         },
-        copyright: "Be Enrich Salon. All rights reserved.",
-        designedBy: "Designed with Elegance"
+        copyright: "Be Enrich Signature Salon. All rights reserved.",
+        designedBy: ""
     },
     testimonials: {
         badge: "Client Experiences",
         title: "Loved by Our Clients",
-        subtitle: "Real stories from people who trust Be Enrich Salon & Spa",
+        subtitle: "Real stories from people who trust Be Enrich Signature Salon & Spa",
         items: [
             {
                 id: 1,
@@ -449,21 +449,28 @@ export const homeContent = {
     brands: {
         title: "Our Trusted Partners",
         subtitle: "Collaborating with the world's finest beauty brands",
-        sideImage: "/images/brands/sissor.png",
+        sideImage: "/images/brands/sissor.webp",
         items: [
-            { name: "Algotherm", logo: "/images/brands/algotherm-logo-horizontal.webp" },
-            { name: "Skeyndor", logo: "/images/brands/skr_logo-black_cr.webp" },
-            { name: "Keune", logo: "/images/brands/keune-logo.webp" },
-            { name: "Kryolan", logo: "/images/brands/kryolan-professional-make-up-logo.webp" },
-            { name: "Redken", logo: "/images/brands/redkenlogo.webp" },
-            { name: "Wella Professionals", logo: "/images/brands/wella-logo.webp" },
+            { name: "Algotherm", logo: "/images/brands/logo-algotherm-02.webp" },
+            { name: "Skeyndor", logo: "/images/brands/Skeyndor.webp" },
+            { name: "Keune", logo: "/images/brands/keune.webp" },
+            { name: "Kryolan", logo: "/images/brands/kryolan.webp" },
+            { name: "Redken", logo: "/images/brands/redken.webp" },
+            { name: "Wella Professionals", logo: "/images/brands/wella_v3.webp" },
             { name: "M.A.C", logo: "/images/brands/MAC-Cosmetics-Logo.webp" },
-            { name: "Schwarzkopf Professional", logo: "/images/brands/Science-Create-Beauty-Logo-Black.webp" },
-            { name: "O3+", logo: "/images/brands/o3.webp" },
-            { name: "KooSwalla", logo: "/images/brands/LOGO.webp" },
-            { name: "Luchiana", logo: "/images/brands/luchiana-1914125123.webp" },
-            { name: "Maybelline", logo: "/images/brands/Maybelline-Logo.svg.png" },
-            { name: "Nykaa", logo: "/images/brands/Nykaa_New_Logo.svg.png" }
+            { name: "Schwarzkopf Professional", logo: "/images/brands/schwarzkopf_v2.webp" },
+            { name: "O3+", logo: "/images/brands/o3+.webp" },
+            { name: "KooSwalla", logo: "/images/brands/kooswalla_v2.webp" },
+            { name: "Jeannot", logo: "/images/brands/Jeannot.webp" },
+            { name: "GK Hair", logo: "/images/brands/gk_v2.webp" },
+            { name: "L'Oréal Professionnel", logo: "/images/brands/loreal.webp" },
+            { name: "Lotus", logo: "/images/brands/lotus.webp" },
+            { name: "Make-Up Studio", logo: "/images/brands/make-up-studio-logo-.webp" },
+            { name: "Moroccanoil", logo: "/images/brands/morocanoil_v2.webp" },
+            { name: "Rica", logo: "/images/brands/rica_final.webp" },
+            { name: "SeaSoul", logo: "/images/brands/seasoul.webp" },
+            { name: "System Professional", logo: "/images/brands/sp.webp" },
+            { name: "Thalgo", logo: "/images/brands/thalgo.webp" }
         ]
     },
 };

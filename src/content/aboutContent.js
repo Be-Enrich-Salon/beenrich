@@ -52,8 +52,8 @@ export const aboutContent = {
         milestones: [
             {
                 year: "2003",
-                title: "Inception",
-                description: "Be Enrich Beauty Salon was founded as a specialized men’s grooming salon, dedicated to precision, style, and professional care."
+                title: "Started in Guntur",
+                description: "Be Enrich Beauty Salon began its story in Guntur, focused on professional men’s grooming with an emphasis on precision, hygiene, and trusted care—laying the foundation for the brand’s values."
             },
             {
                 year: "2005",
@@ -61,14 +61,14 @@ export const aboutContent = {
                 description: "Guided by a vision to create a more inclusive and elevated beauty experience, Be Enrich evolved into a professional unisex and family salon—offering thoughtfully curated services for men, women, and families."
             },
             {
-                year: "2013",
-                title: "Started in Guntur",
-                description: "Expanded our operations to Guntur, establishing a strong presence in the region."
+                year: "2011",
+                title: "Expansion in Guntur",
+                description: "Scaled our presence and capabilities in Guntur—expanding services, talent, and operational excellence to serve a growing client base."
             },
             {
                 year: "2015",
-                title: "Flagship Expansion",
-                description: "Flagship expansion in Vijayawada, marking a key milestone in our growth."
+                title: "Started in Vijayawada",
+                description: "Opened our Vijayawada studio—marking a significant step in the brand’s growth with a premium, centrally located space at Trendset Mall."
             },
             {
                 year: "2017",

@@ -41,9 +41,8 @@ const BrandsSection = () => {
                         {brands.subtitle}
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 text-xs uppercase tracking-[0.3em] text-gold/80">
-                        <span className="rounded-full bg-white/5 px-4 py-2 border border-white/10">14+ Global Houses</span>
-                        <span className="rounded-full bg-white/5 px-4 py-2 border border-white/10">Derm-grade Care</span>
-                        <span className="rounded-full bg-white/5 px-4 py-2 border border-white/10">Salon-Perfect Results</span>
+                        <span className="rounded-full bg-white/5 px-4 py-2">Derm-grade Care</span>
+                        <span className="rounded-full bg-white/5 px-4 py-2">Salon-Perfect Results</span>
                     </div>
                 </motion.div>
 

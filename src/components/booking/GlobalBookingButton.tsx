@@ -20,7 +20,7 @@ export default function GlobalBookingButton() {
     <>
       <button
         onClick={toggleBooking}
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 bg-gold text-ink rounded-full font-bold uppercase tracking-wider text-sm shadow-2xl hover:shadow-glow hover:scale-110 transition-all duration-300 animate-pulse hover:animate-none"
+        className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 bg-gold text-ink rounded-full font-bold uppercase tracking-wider text-sm shadow-2xl hover:shadow-glow hover:scale-110 transition-all duration-300 animate-pulse hover:animate-none cursor-pointer"
         aria-label="Book Appointment"
       >
         <Calendar className="h-5 w-5" />

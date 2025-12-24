@@ -125,7 +125,6 @@
 
 .close-button {
   padding: 0;
-  cursor: pointer;
   border: none;
   width: 25px;
   height: 25px;
@@ -134,6 +133,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 /* Choose gender */
@@ -220,6 +220,7 @@
   overflow-y: auto;
   max-height: calc(100% - 120px);
   padding: 10px 0;
+  overscroll-behavior: contain;
 }
 
 .services-list::-webkit-scrollbar {
