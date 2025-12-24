@@ -10,6 +10,7 @@ export const metadata = {
     title: "About Us | Be Enrich Beauty Salon",
     description: "Learn about our journey, philosophy, and commitment to excellence at Be Enrich Beauty Salon.",
 };
+// this is the baout componet 
 
 export default function AboutPage() {
     return (
