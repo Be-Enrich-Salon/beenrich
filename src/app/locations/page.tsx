@@ -166,17 +166,15 @@ export default function LocationsPage() {
                         type: "spring",
                         stiffness: 200,
                         damping: 15,
-                        delay: 0.3
-                      }}
-                      animate={{
-                        y: [0, -10, 0],
-                      }}
-                      transition={{
+                        delay: 0.3,
                         y: {
                           duration: 2,
                           repeat: Infinity,
                           ease: "easeInOut"
                         }
+                      }}
+                      animate={{
+                        y: [0, -10, 0],
                       }}
                       className="absolute transform -translate-x-1/2 -translate-y-full"
                       style={{
