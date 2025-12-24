@@ -11,17 +11,17 @@ const locations = [
     name: "Guntur",
     description: "Located in the heart of Brindavan Gardens, our Guntur branch combines accessibility with tranquility. This intimate studio specializes in personalized consultations and bridal services, perfect for your special occasions.",
     address: "D.No. 5-87-50/1 1'st Floor, Lakshmipuram Main Rd, opp. Seetharamaiah High School, Brindavan Gardens, Guntur, Andhra Pradesh 522007",
-    image: "/images/locations/ongole.webp",
+    image: "/images/saloon/saloon1.webp",
     mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
     staticMap: "/images/locations/guntur.png",
-     pinPosition: { left: "45%", top: "40%" },
+    pinPosition: { left: "45%", top: "40%" },
   },
   {
     name: "Vijayawada",
     description: "Our flagship studio at Trendset Mall offers a spacious, modern salon experience with premium facilities and ample parking. Experience the full range of Be Enrich services in a luxurious setting designed for your comfort.",
     address: "2nd Floor, Shop No 12,13A, Trendset Mall, Kala Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520008.",
-    image: "/images/locations/vijayawada.webp",
+    image: "/images/saloon/saloon2.webp",
     mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Kala+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
     staticMap: "/images/locations/vijayawada.png",
@@ -31,7 +31,7 @@ const locations = [
     name: "Ongole",
     description: "Conveniently situated at M.K.R. Plaza on Manganmuru Road, our Ongole location provides easy access to world-class grooming services. The studio features state-of-the-art equipment and a relaxing ambience.",
     address: "M.K.R. Plaza, D.No. 7-1205, 2ND floor , upstairs Axis Bank, Manganmuru Road , ongole , ongole , Andhra Pradesh , 523002",
-    image: "/images/locations/guntur.webp",
+    image: "/images/saloon/saloon3.webp",
     mapEmbed: "https://maps.google.com/maps?q=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
     staticMap: "/images/locations/ongole.png",
@@ -42,7 +42,7 @@ const locations = [
     name: "Tenali",
     description: "Our newest branch near Saibaba Temple brings premium salon and spa services to Tenali. Enjoy a serene atmosphere with dedicated specialists offering personalized hair, skin, and wellness treatments.",
     address: "4th Floor, Door No 19-15-47, shiridi squre, Near Opo Saibaba Temple, Boss Road, Tenali, Andhra Pradesh 522201.",
-    image: "/images/locations/tenali.webp",
+    image: "/images/saloon/saloon1.webp",
     mapEmbed: "https://maps.google.com/maps?q=4th+Floor,+Door+No+19-15-47,+shiridi+squre,+Near+Opo+Saibaba+Temple,+Boss+Road,+Tenali,+Andhra+Pradesh+522201&z=15&output=embed",
     mapLink: "https://www.google.com/maps/search/?api=1&query=4th+Floor,+Door+No+19-15-47,+shiridi+squre,+Near+Opo+Saibaba+Temple,+Boss+Road,+Tenali,+Andhra+Pradesh+522201",
     staticMap: "/images/locations/tenali.png",
@@ -162,7 +162,7 @@ export default function LocationsPage() {
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ 
+                      transition={{
                         type: "spring",
                         stiffness: 200,
                         damping: 15,
