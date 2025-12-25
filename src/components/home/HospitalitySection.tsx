@@ -114,7 +114,7 @@ const HospitalitySection = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-                                <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-3xl font-bold shadow-lg border-2 border-gold">
+                                <p className="px-4 py-2 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-xl md:text-3xl font-bold shadow-lg border-2 border-gold">
                                     {branches[0].name}
                                 </p>
                             </div>
@@ -140,11 +140,14 @@ const HospitalitySection = () => {
                     </motion.div>
 
                     {/* Guntur Name Badge - Outside container for full visibility */}
-                    <div className="absolute top-[32%] left-[8%] z-50 text-center">
-                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                    <motion.div
+                        style={{ x: x2, y: y2, rotate: rotate2, opacity: opacity2, scale: scale2 }}
+                        className="absolute top-[40%] left-[2%] md:top-[32%] md:left-[8%] z-50 text-center"
+                    >
+                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
                             {branches[1].name}
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Image 3 - Ongole (Behind and partially shown) */}
                     <motion.div
@@ -165,11 +168,14 @@ const HospitalitySection = () => {
                     </motion.div>
 
                     {/* Ongole Name Badge - Right side for visibility */}
-                    <div className="absolute top-[32%] right-[20%] z-50 text-center">
-                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                    <motion.div
+                        style={{ x: x3, y: y3, rotate: rotate3, opacity: opacity3, scale: scale3 }}
+                        className="absolute top-[40%] right-[30%] md:top-[32%] md:right-[20%] z-50 text-center"
+                    >
+                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
                             {branches[2].name}
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Image 4 - Tenali (Behind and partially shown) */}
                     <motion.div
@@ -190,11 +196,14 @@ const HospitalitySection = () => {
                     </motion.div>
 
                     {/* Tenali Name Badge - Outside container for full visibility */}
-                    <div className="absolute top-[34%] right-[6%] z-50 text-center">
-                        <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                    <motion.div
+                        style={{ x: x4, y: y4, rotate: rotate4, opacity: opacity4, scale: scale4 }}
+                        className="absolute top-[42%] right-[5%] md:top-[34%] md:right-[6%] z-50 text-center"
+                    >
+                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
                             {branches[3].name}
                         </p>
-                    </div>
+                    </motion.div>
 
                 </div>
 

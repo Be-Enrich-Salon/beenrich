@@ -178,7 +178,8 @@
 }
 
 .gender-buttons-container .female-button:hover,
-.gender-buttons-container .male-button:hover {
+.gender-buttons-container .male-button:hover,
+.gender-buttons-container button.selected {
   background-color: #D4AC68;
   color: #0F0F0F;
   border-color: #D4AC68;

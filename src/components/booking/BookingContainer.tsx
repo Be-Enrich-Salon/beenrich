@@ -40,12 +40,16 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
 
     const handleLocationSelect = (location: string) => {
         setSelectedLocation(location);
-        setStep('gender');
+        setTimeout(() => {
+            setStep('gender');
+        }, 300);
     };
 
     const handleGenderSelect = (gender: 'Male' | 'Female') => {
         setSelectedGender(gender);
-        setStep('services');
+        setTimeout(() => {
+            setStep('services');
+        }, 300);
     };
 
     const toggleService = (serviceName: string) => {
@@ -113,7 +117,7 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                             {locationsList.map((location) => (
                                 <button
                                     key={location}
-                                    className="male-button" // reuse gender button style
+                                    className={`male-button ${selectedLocation === location ? "selected" : ""}`}
                                     onClick={() => handleLocationSelect(location)}
                                 >
                                     {location}
@@ -124,13 +128,13 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
                         <div className="gender-buttons-container">
                             <h2>Choose Gender</h2>
                             <button
-                                className="male-button"
+                                className={`male-button ${selectedGender === "Male" ? "selected" : ""}`}
                                 onClick={() => handleGenderSelect('Male')}
                             >
                                 Male
                             </button>
                             <button
-                                className="female-button"
+                                className={`female-button ${selectedGender === "Female" ? "selected" : ""}`}
                                 onClick={() => handleGenderSelect('Female')}
                             >
                                 Female
