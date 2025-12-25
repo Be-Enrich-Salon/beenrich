@@ -92,119 +92,172 @@ const HospitalitySection = () => {
                     </motion.p>
                 </div>
 
-                {/* Overlapping Branch Images - Horizontal layout (full-bleed) */}
-                <div className="relative h-[520px] md:h-[560px] w-screen max-w-none left-1/2 -translate-x-1/2 mb-20">
+                {/* Content Wrapper with separate Mobile/Desktop layouts */}
+                <div className="relative mb-20">
 
-                    {/* Image 1 - Vijayawada (Top Layer - centered and fully visible) */}
-                    <motion.div
-                        style={{ x: x1, y: y1, rotate: rotate1, opacity: opacity1, scale: scale1 }}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="absolute top-[6%] left-[20%] w-[44%] md:w-[44%] h-[420px] md:h-[480px] z-50"
-                    >
-                        <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl ring-2 ring-gold/60 border border-gold/40 group">
+                    {/* MOBILE LAYOUT: Static Feature + Scrollable Row below */}
+                    <div className="block md:hidden w-full px-4 space-y-6">
+
+                        {/* 1. Main Static Feature (Vijayawada) */}
+                        <div className="relative w-full h-[320px] rounded-[2rem] overflow-hidden shadow-2xl border border-gold/40">
                             <Image
                                 src={branches[0].image}
                                 alt={branches[0].name}
                                 fill
-                                sizes="(max-width:768px) 60vw, 40vw"
-                                className="object-cover brightness-110 transition-transform duration-700 group-hover:scale-110"
+                                sizes="90vw"
+                                className="object-cover brightness-110"
+                                priority
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-                                <p className="px-4 py-2 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-xl md:text-3xl font-bold shadow-lg border-2 border-gold">
+                            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent" />
+                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center w-full px-4">
+                                <p className="inline-block px-6 py-2 rounded-full bg-ink/90 text-paper font-display text-2xl font-bold shadow-lg border border-gold backdrop-blur-md">
                                     {branches[0].name}
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
 
-                    {/* Image 2 - Guntur (Behind and partially shown) */}
-                    <motion.div
-                        style={{ x: x2, y: y2, rotate: rotate2, opacity: opacity2, scale: scale2 }}
-                        transition={{ type: "spring", stiffness: 60, damping: 18 }}
-                        className="pointer-events-none absolute top-[14%] -left-[3%] w-[40%] md:w-[40%] h-[360px] md:h-[360px] z-30 scale-[0.97] opacity-86"
-                    >
-                        <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl border-2 border-white/10 opacity-90 hover:opacity-100 transition-opacity">
-                            <Image
-                                src={branches[1].image}
-                                alt={branches[1].name}
-                                fill
-                                sizes="(max-width:768px) 60vw, 36vw"
-                                className="object-cover brightness-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
+                        {/* 2. Scrollable Row for other locations */}
+                        <div className="w-full overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4">
+                            <div className="flex gap-4 w-max">
+                                {branches.slice(1).map((branch, index) => (
+                                    <div
+                                        key={branch.name}
+                                        className="snap-center relative w-[70vw] h-[220px] rounded-3xl overflow-hidden shadow-lg border border-gold/20 flex-shrink-0"
+                                    >
+                                        <Image
+                                            src={branch.image}
+                                            alt={branch.name}
+                                            fill
+                                            sizes="70vw"
+                                            className="object-cover brightness-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent" />
+                                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center w-full">
+                                            <p className="inline-block px-4 py-1.5 rounded-full bg-ink/80 text-paper font-display text-lg font-bold shadow-md border border-gold/50 backdrop-blur-sm">
+                                                {branch.name}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </motion.div>
 
-                    {/* Guntur Name Badge - Outside container for full visibility */}
-                    <motion.div
-                        style={{ x: x2, y: y2, rotate: rotate2, opacity: opacity2, scale: scale2 }}
-                        className="absolute top-[40%] left-[2%] md:top-[32%] md:left-[8%] z-50 text-center"
-                    >
-                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
-                            {branches[1].name}
-                        </p>
-                    </motion.div>
+                    </div>
 
-                    {/* Image 3 - Ongole (Behind and partially shown) */}
-                    <motion.div
-                        style={{ x: x3, y: y3, rotate: rotate3, opacity: opacity3, scale: scale3 }}
-                        transition={{ type: "spring", stiffness: 60, damping: 18 }}
-                        className="pointer-events-none absolute top-[14%] left-[48%] w-[34%] md:w-[34%] h-[360px] md:h-[360px] z-20 scale-[0.94] opacity-82"
-                    >
-                        <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl border-2 border-white/10 opacity-90 hover:opacity-100 transition-opacity">
-                            <Image
-                                src={branches[2].image}
-                                alt={branches[2].name}
-                                fill
-                                sizes="(max-width:768px) 60vw, 32vw"
-                                className="object-cover brightness-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                        </div>
-                    </motion.div>
+                    {/* DESKTOP LAYOUT: Original Parallax Effect */}
+                    <div className="hidden md:block relative h-[560px] w-screen max-w-none left-1/2 -translate-x-1/2">
 
-                    {/* Ongole Name Badge - Right side for visibility */}
-                    <motion.div
-                        style={{ x: x3, y: y3, rotate: rotate3, opacity: opacity3, scale: scale3 }}
-                        className="absolute top-[40%] right-[30%] md:top-[32%] md:right-[20%] z-50 text-center"
-                    >
-                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
-                            {branches[2].name}
-                        </p>
-                    </motion.div>
+                        {/* Image 1 - Vijayawada (Top Layer - centered and fully visible) */}
+                        <motion.div
+                            style={{ x: x1, y: y1, rotate: rotate1, opacity: opacity1, scale: scale1 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="absolute top-[6%] left-[20%] w-[44%] h-[480px] z-50"
+                        >
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl ring-2 ring-gold/60 border border-gold/40 group">
+                                <Image
+                                    src={branches[0].image}
+                                    alt={branches[0].name}
+                                    fill
+                                    sizes="40vw"
+                                    className="object-cover brightness-110 transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+                                    <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-3xl font-bold shadow-lg border-2 border-gold">
+                                        {branches[0].name}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
 
-                    {/* Image 4 - Tenali (Behind and partially shown) */}
-                    <motion.div
-                        style={{ x: x4, y: y4, rotate: rotate4, opacity: opacity4, scale: scale4 }}
-                        transition={{ type: "spring", stiffness: 60, damping: 18 }}
-                        className="pointer-events-none absolute top-[16%] left-[64%] w-[28%] md:w-[30%] h-[340px] md:h-[360px] z-15 scale-[0.94] opacity-84"
-                    >
-                        <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg border border-white/5">
-                            <Image
-                                src={branches[3].image}
-                                alt={branches[3].name}
-                                fill
-                                sizes="(max-width:768px) 50vw, 30vw"
-                                className="object-cover brightness-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
-                        </div>
-                    </motion.div>
+                        {/* Image 2 - Guntur (Behind and partially shown) */}
+                        <motion.div
+                            style={{ x: x2, y: y2, rotate: rotate2, opacity: opacity2, scale: scale2 }}
+                            transition={{ type: "spring", stiffness: 60, damping: 18 }}
+                            className="pointer-events-none absolute top-[14%] -left-[3%] w-[40%] h-[360px] z-30 scale-[0.97] opacity-86"
+                        >
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-xl border-2 border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                                <Image
+                                    src={branches[1].image}
+                                    alt={branches[1].name}
+                                    fill
+                                    sizes="36vw"
+                                    className="object-cover brightness-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
+                            </div>
+                        </motion.div>
 
-                    {/* Tenali Name Badge - Outside container for full visibility */}
-                    <motion.div
-                        style={{ x: x4, y: y4, rotate: rotate4, opacity: opacity4, scale: scale4 }}
-                        className="absolute top-[42%] right-[5%] md:top-[34%] md:right-[6%] z-50 text-center"
-                    >
-                        <p className="px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-ink/85 text-paper font-display text-sm md:text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
-                            {branches[3].name}
-                        </p>
-                    </motion.div>
+                        {/* Guntur Name Badge - Outside container for full visibility */}
+                        <motion.div
+                            style={{ x: x2, y: y2, rotate: rotate2, opacity: opacity2, scale: scale2 }}
+                            className="absolute top-[32%] left-[8%] z-50 text-center"
+                        >
+                            <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                                {branches[1].name}
+                            </p>
+                        </motion.div>
 
+                        {/* Image 3 - Ongole (Behind and partially shown) */}
+                        <motion.div
+                            style={{ x: x3, y: y3, rotate: rotate3, opacity: opacity3, scale: scale3 }}
+                            transition={{ type: "spring", stiffness: 60, damping: 18 }}
+                            className="pointer-events-none absolute top-[14%] left-[48%] w-[34%] h-[360px] z-20 scale-[0.94] opacity-82"
+                        >
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-xl border-2 border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                                <Image
+                                    src={branches[2].image}
+                                    alt={branches[2].name}
+                                    fill
+                                    sizes="32vw"
+                                    className="object-cover brightness-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
+                            </div>
+                        </motion.div>
+
+                        {/* Ongole Name Badge - Right side for visibility */}
+                        <motion.div
+                            style={{ x: x3, y: y3, rotate: rotate3, opacity: opacity3, scale: scale3 }}
+                            className="absolute top-[32%] right-[20%] z-50 text-center"
+                        >
+                            <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                                {branches[2].name}
+                            </p>
+                        </motion.div>
+
+                        {/* Image 4 - Tenali (Behind and partially shown) */}
+                        <motion.div
+                            style={{ x: x4, y: y4, rotate: rotate4, opacity: opacity4, scale: scale4 }}
+                            transition={{ type: "spring", stiffness: 60, damping: 18 }}
+                            className="pointer-events-none absolute top-[16%] left-[64%] w-[30%] h-[360px] z-15 scale-[0.94] opacity-84"
+                        >
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-lg border border-white/5">
+                                <Image
+                                    src={branches[3].image}
+                                    alt={branches[3].name}
+                                    fill
+                                    sizes="30vw"
+                                    className="object-cover brightness-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/8 to-transparent" />
+                            </div>
+                        </motion.div>
+
+                        {/* Tenali Name Badge - Outside container for full visibility */}
+                        <motion.div
+                            style={{ x: x4, y: y4, rotate: rotate4, opacity: opacity4, scale: scale4 }}
+                            className="absolute top-[34%] right-[6%] z-50 text-center"
+                        >
+                            <p className="px-6 py-3 rounded-full bg-ink/85 text-paper font-display text-xl font-bold shadow-lg border-2 border-gold whitespace-nowrap">
+                                {branches[3].name}
+                            </p>
+                        </motion.div>
+
+                    </div>
                 </div>
 
                 {/* Call to Action */}
