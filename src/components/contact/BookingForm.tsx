@@ -42,12 +42,17 @@ export default function BookingForm() {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    Request_Type: "Appointment Booking",
-                    ...formData,
-                    _subject: `New Appointment Request | ${formData.name}`,
-                    _template: "table",
+                    _subject: `New Appointment: ${formData.name}`,
+                    _template: "box",
                     _captcha: "false",
-                    _autoresponse: "Thank you for your request. We will confirm your appointment shortly."
+                    Intro: "Hello Be Enrich! I want to book an appointment.",
+                    Name: formData.name,
+                    Phone: formData.phone,
+                    Email: formData.email || "Not provided",
+                    Location: formData.location,
+                    Service: formData.service || "Not selected",
+                    Message: formData.message || "No message",
+                    Request: "Please let me know the available slot."
                 })
             });
 
@@ -184,7 +189,7 @@ export default function BookingForm() {
                     }`}
             >
                 {status === 'loading' ? 'Sending...'
-                    : status === 'success' ? 'Request Sent'
+                    : status === 'success' ? 'Email Sent Successfully'
                         : status === 'error' ? 'Failed - Try Again'
                             : 'BOOK APPOINTMENT'}
             </button>

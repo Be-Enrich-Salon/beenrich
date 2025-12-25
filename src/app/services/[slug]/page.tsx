@@ -471,7 +471,7 @@ const ServiceDetail = () => {
                                 <div className="relative lg:h-full rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
                                     <div className="lg:absolute lg:inset-0 lg:overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gold/50">
                                         <div className="sticky top-0 z-10 bg-[#0c0c0c]/95 backdrop-blur-md px-5 py-4 flex items-center justify-between border-b border-white/10">
-                                            <span className="text-xs uppercase tracking-[0.25em] text-mist/80">Pricing</span>
+                                            <span className="text-xs uppercase tracking-[0.25em] text-mist/80">Services</span>
                                             <ShieldCheck className="h-5 w-5 text-gold" />
                                         </div>
                                         <div className="divide-y divide-white/10">
@@ -479,7 +479,7 @@ const ServiceDetail = () => {
                                                 <div key={i} className="flex items-center justify-between px-5 py-3 hover:bg-white/5 transition-colors">
                                                     <div className="space-y-1">
                                                         <p className="text-sm font-semibold text-paper leading-tight">{item.name}</p>
-                                                        {item.description && <p className="text-[10px] text-mist/60">{item.description}</p>}
+                                                        <p className="text-[10px] text-mist/60">{item.description || "Fine-tuned technique"}</p>
                                                     </div>
                                                     <span className="text-xs font-sans font-bold text-gold whitespace-nowrap ml-4">{item.price}</span>
                                                 </div>
