@@ -428,7 +428,7 @@ const ServiceDetail = () => {
                                             <div className="space-y-2">
                                                 {section.items.slice(0, 1).map((it: any, i: number) => (
                                                     it?.description ? (
-                                                        <p key={i} className="text-sm text-mist/70 leading-relaxed italic">"{it.description}"</p>
+                                                        <p key={i} className="text-sm text-mist/70 leading-relaxed italic">&quot;{it.description}&quot;</p>
                                                     ) : null
                                                 ))}
                                             </div>
