@@ -20,10 +20,7 @@ const ServiceDetail = () => {
     const relatedScrollRef = useRef<HTMLDivElement>(null);
     const [relatedSlide, setRelatedSlide] = useState(0);
     const { openBooking } = useBooking();
-    const formatPrice = (price: any) => {
-        if (typeof price !== "string") return price;
-        return price.replace(/\s*onwards$/i, "");
-    };
+
 
     // Fetch content based on slug
     // @ts-ignore
@@ -374,15 +371,18 @@ const ServiceDetail = () => {
                     {/* Tabs */}
                     <div className="overflow-x-auto">
                         <div className="flex gap-3 min-w-max">
-                            {content.detailedSections.map((section: any, idx: number) => (
-                                <button
-                                    key={section.title}
-                                    onClick={() => setActiveSection(idx)}
-                                    className={`rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.25em] border ${idx === activeSection ? "bg-gold text-ink border-gold" : "bg-white/10 text-paper border-white/20"}`}
-                                >
-                                    {section.title}
-                                </button>
-                            ))}
+                            {content.detailedSections.map((section: any, idx: number) => {
+                                if (section.excludeFromMenu) return null;
+                                return (
+                                    <button
+                                        key={section.title}
+                                        onClick={() => setActiveSection(idx)}
+                                        className={`rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.25em] border ${idx === activeSection ? "bg-gold text-ink border-gold" : "bg-white/10 text-paper border-white/20"}`}
+                                    >
+                                        {section.title}
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -418,70 +418,73 @@ const ServiceDetail = () => {
                                 </div>
 
                                 {/* Info block */}
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl md:text-3xl font-serif text-gold">{section.title}</h3>
-                                    <p className="text-mist/80 leading-relaxed">{section.description}</p>
-                                    {/* Extra paragraphs derived from service items (no pricing) */}
-                                    {Array.isArray(section.items) && section.items.length > 0 && (
-                                        <div className="space-y-3">
-                                            {section.items.slice(0, 2).map((it: any, i: number) => (
-                                                it?.description ? (
-                                                    <p key={i} className="text-mist/70 leading-relaxed">{it.description}</p>
-                                                ) : null
+                                <div className="flex flex-col justify-center h-full">
+                                    <div className="space-y-6 pr-6">
+                                        <h3 className="text-2xl md:text-3xl font-serif text-gold">{section.title}</h3>
+                                        <p className="text-mist/80 leading-relaxed">{section.description}</p>
+
+                                        {/* Simplified content to fit height */}
+                                        {Array.isArray(section.items) && section.items.length > 0 && (
+                                            <div className="space-y-2">
+                                                {section.items.slice(0, 1).map((it: any, i: number) => (
+                                                    it?.description ? (
+                                                        <p key={i} className="text-sm text-mist/70 leading-relaxed italic">"{it.description}"</p>
+                                                    ) : null
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {/* Restored content to fill space */}
+                                        {benefitTitles.length > 0 && (
+                                            <p className="text-mist/70 leading-relaxed">
+                                                Why it matters: {benefitTitles.slice(0, 2).join(" • ")}{benefitTitles.length > 2 ? " • more" : ""}.
+                                            </p>
+                                        )}
+                                        <p className="text-mist/70 leading-relaxed">
+                                            Expect a cleaner silhouette, softer edges, and finishes that hold without stiffness.
+                                        </p>
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                            {((detailedContent?.benefits || content.whyChooseUs) || []).slice(0, 2).map((b: any, i: number) => (
+                                                <div key={i} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                                                    <div className="flex items-center gap-2 text-gold text-xs uppercase tracking-[0.25em] mb-1">
+                                                        <CheckCircle2 className="h-4 w-4" />
+                                                        Highlight
+                                                    </div>
+                                                    <p className="text-sm text-mist/80 line-clamp-2">{b.title}</p>
+                                                </div>
                                             ))}
                                         </div>
-                                    )}
-                                    {itemNames.length > 0 && (
-                                        <p className="text-mist/70 leading-relaxed">
-                                            Crafted around {itemNames.slice(0, 3).join(", ")}{itemNames.length > 3 ? " and more" : ""}, each service balances precision work with natural movement.
-                                        </p>
-                                    )}
-                                    {benefitTitles.length > 0 && (
-                                        <p className="text-mist/70 leading-relaxed">
-                                            Why it matters: {benefitTitles.slice(0, 2).join(" • ")}{benefitTitles.length > 2 ? " • more" : ""}.
-                                        </p>
-                                    )}
-                                    <p className="text-mist/70 leading-relaxed">
-                                        Expect a cleaner silhouette, softer edges, and finishes that hold without stiffness.
-                                    </p>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        {((detailedContent?.benefits || content.whyChooseUs) || []).slice(0, 3).map((b: any, i: number) => (
-                                            <div key={i} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                                                <div className="flex items-center gap-2 text-gold text-xs uppercase tracking-[0.25em] mb-1">
-                                                    <CheckCircle2 className="h-4 w-4" />
-                                                    Highlight
-                                                </div>
-                                                <p className="text-sm text-mist/80">{b.title}</p>
-                                            </div>
-                                        ))}
+                                        {isBridalSection && (
+                                            <button
+                                                onClick={openBooking}
+                                                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-ink shadow-md transition hover:-translate-y-0.5"
+                                            >
+                                                Book Bridal Block
+                                                <ChevronRight className="h-4 w-4" />
+                                            </button>
+                                        )}
                                     </div>
-                                    {isBridalSection && (
-                                        <button
-                                            onClick={openBooking}
-                                            className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-ink shadow-md transition hover:-translate-y-0.5"
-                                        >
-                                            Book Bridal Block
-                                            <ChevronRight className="h-4 w-4" />
-                                        </button>
-                                    )}
                                 </div>
 
                                 {/* Pricing panel */}
-                                <div className="lg:sticky lg:top-24 rounded-2xl border border-white/10 bg-white/5">
-                                    <div className="px-5 py-4 flex items-center justify-between">
-                                        <span className="text-xs uppercase tracking-[0.25em] text-mist/80">Pricing</span>
-                                        <ShieldCheck className="h-5 w-5 text-gold" />
-                                    </div>
-                                    <div className="divide-y divide-white/10">
-                                        {section.items.map((item: any, i: number) => (
-                                            <div key={i} className="flex items-center justify-between px-5 py-3">
-                                                <div className="space-y-1">
-                                                    <p className="text-sm font-semibold text-paper">{item.name}</p>
-                                                    <p className="text-xs text-mist/70">{item.description || "Fine-tuned technique"}</p>
+                                <div className="relative h-full rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                                    <div className="absolute inset-0 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gold/50">
+                                        <div className="sticky top-0 z-10 bg-[#0c0c0c]/95 backdrop-blur-md px-5 py-4 flex items-center justify-between border-b border-white/10">
+                                            <span className="text-xs uppercase tracking-[0.25em] text-mist/80">Pricing</span>
+                                            <ShieldCheck className="h-5 w-5 text-gold" />
+                                        </div>
+                                        <div className="divide-y divide-white/10">
+                                            {section.items.map((item: any, i: number) => (
+                                                <div key={i} className="flex items-center justify-between px-5 py-3 hover:bg-white/5 transition-colors">
+                                                    <div className="space-y-1">
+                                                        <p className="text-sm font-semibold text-paper leading-tight">{item.name}</p>
+                                                        {item.description && <p className="text-[10px] text-mist/60">{item.description}</p>}
+                                                    </div>
+                                                    <span className="text-xs font-sans font-bold text-gold whitespace-nowrap ml-4">{item.price}</span>
                                                 </div>
-                                                <span className="text-sm font-sans font-medium text-gold">{formatPrice(item.price)}</span>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 

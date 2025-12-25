@@ -81,12 +81,12 @@ export const detailedServicesContent = {
                 items: [
                     { name: "Creative Director", price: "999" },
                     { name: "Creative Stylist", price: "799" },
-                    { name: "Senior Stylist", price: "299" },
+                    { name: "Senior Stylist", price: "260" },
                     { name: "Kids Hair cut (Male)", price: "250" },
                     { name: "Beard Trim", price: "100" },
-                    { name: "Normal Shave", price: "150" },
-                    { name: "French Beard shave", price: "200" },
-                    { name: "Beard Design", price: "200" }
+                    { name: "Normal Shave", price: "120" },
+                    { name: "French Beard shave", price: "140" },
+                    { name: "Beard Design", price: "150" }
                 ]
             },
             {
@@ -153,6 +153,20 @@ export const detailedServicesContent = {
                 ]
             },
             {
+                category: "Skin Polishings",
+                items: [
+                    { name: "Full Body", price: "4000" },
+                    { name: "Full Hands - Regular", price: "800" },
+                    { name: "Full Hands - Luxury", price: "1000" },
+                    { name: "Neck - Regular", price: "700" },
+                    { name: "Neck - Luxury", price: "1000" },
+                    { name: "Neck Cleansing", price: "400" },
+                    { name: "Foot Polishing", price: "400" },
+                    { name: "Half Legs", price: "700" },
+                    { name: "Full Legs", price: "1500" }
+                ]
+            },
+            {
                 category: "Clean Ups",
                 items: [
                     { name: "O3 Clean up", price: "1500" },
@@ -165,17 +179,49 @@ export const detailedServicesContent = {
                 ]
             },
             {
-                category: "Skin Polishings",
+                category: "Facials",
                 items: [
-                    { name: "Full Body", price: "4000" },
-                    { name: "Full Hands - Classic", price: "800" },
-                    { name: "Full Hands - Luxury", price: "1000" },
-                    { name: "Neck - Classic", price: "700" },
-                    { name: "Neck - Luxury", price: "1000" },
-                    { name: "Neck Cleansing", price: "400" },
-                    { name: "Foot Polishing", price: "400" },
-                    { name: "Half Legs", price: "700" },
-                    { name: "Full Legs", price: "1500" }
+                    { name: "Shanaz Herbal", price: "1200" },
+                    { name: "Shanaz Pearl", price: "2000" },
+                    { name: "Shanaz Gold", price: "2000" },
+                    { name: "Shanaz Diamond", price: "3000" },
+                    { name: "Shanaz Platinum", price: "3500" },
+                    { name: "Maintenance Facial", price: "1000" },
+                    { name: "Fruit Facial", price: "1000" },
+                    { name: "Fresh Fruit Facial", price: "1500" },
+                    { name: "Skin Lightening Facial", price: "2600" },
+                    { name: "De Stressing & Rejuvenating Facial", price: "1600" },
+                    { name: "Preservita Advanced Anti Aging", price: "3000" },
+                    { name: "Hydra Nourish", price: "1600" },
+                    { name: "Glow Dermi", price: "1600" },
+                    { name: "Dipigmentation Facial", price: "2000" },
+                    { name: "ACNEX Facial", price: "2000" },
+                    { name: "Insta Fair Facial", price: "2000" },
+                    { name: "Goldshen", price: "2000" },
+                    { name: "Botanical Under - Eye Treatment", price: "1200" },
+                    { name: "Chocolate Facial", price: "2500" },
+                    { name: "Wine Facial", price: "2000" },
+                    { name: "Silky Silver Facial", price: "2000" },
+                    { name: "Brightening Facial", price: "2000" },
+                    { name: "Perfect Detan Facial", price: "2500" }
+                ]
+            },
+            {
+                category: "Lotus Ultimo Facials",
+                items: [
+                    { name: "Gold", price: "5000" },
+                    { name: "Oyster Pearl", price: "5000" },
+                    { name: "Platinum", price: "5000" },
+                    { name: "Advanced Anti Aging", price: "3000" }
+                ]
+            },
+            {
+                category: "O3+ Facials",
+                items: [
+                    { name: "Whitening", price: "3500" },
+                    { name: "Seaweed", price: "3500" },
+                    { name: "Gold", price: "3500" },
+                    { name: "Diamond", price: "4000" }
                 ]
             }
         ]
@@ -215,7 +261,7 @@ export const detailedServicesContent = {
         ],
         sections: [
             {
-                category: "Waxing (Classic / Chocolate / Paraffin)",
+                category: "Waxing (Regular / Chocolate / Paraffin)",
                 items: [
                     { name: "Full Body", price: "2500 / 3000 / 3000" },
                     { name: "Full Arms", price: "350 / 400 / 800" },
@@ -235,7 +281,7 @@ export const detailedServicesContent = {
                 ]
             },
             {
-                category: "Makeup & Styling (Classic / Luxury / HD)",
+                category: "Makeup & Styling (Regular / Luxury / HD)",
                 items: [
                     { name: "Light Makeup", price: "2000 / 2500 / 3000" },
                     { name: "Party Makeup", price: "2000 / 2500 / 3000" },
@@ -245,7 +291,7 @@ export const detailedServicesContent = {
                     { name: "Hair Updo's", price: "3000 onwards" },
                     { name: "Saree Draping", price: "699" },
                     { name: "Mehendi - bridal", price: "5000 onwards" },
-                    { name: "Mehendi - Classic", price: "500 onwards" }
+                    { name: "Mehendi - Regular", price: "500 onwards" }
                 ]
             },
             {
@@ -274,11 +320,23 @@ export const detailedServicesContent = {
         ],
         sections: [
             {
-                category: "Luxe Hand & Foot",
+                category: "Pedicure",
                 items: [
-                    { name: "Crystal Pedicure", price: "1800" },
-                    { name: "Spa Manicure", price: "1500" },
-                    { name: "Heel Peel Treatment", price: "2000" }
+                    { name: "Regular Pedicure", price: "600" },
+                    { name: "Deluxe Pedicure", price: "900" },
+                    { name: "Luxury Pedicure", price: "1200" },
+                    { name: "Crystal Pedicure", price: "1300" },
+                    { name: "Cut & File", price: "150" }
+                ]
+            },
+            {
+                category: "Manicure",
+                items: [
+                    { name: "Regular Manicure", price: "500" },
+                    { name: "Deluxe Manicure", price: "750" },
+                    { name: "Luxury Manicure", price: "800" },
+                    { name: "Crystal Manicure", price: "1000" },
+                    { name: "Cut & File", price: "150" }
                 ]
             },
             {
@@ -302,18 +360,27 @@ export const detailedServicesContent = {
         ],
         sections: [
             {
-                category: "Body Therapy",
+                category: "Body SPA (45min / 60min / 90min)",
                 items: [
-                    { name: "Full Body Swedish Massage", price: "3500" },
-                    { name: "Deep Tissue Therapy", price: "4000" },
-                    { name: "Body Polishing & Scrub", price: "4500" }
+                    { name: "Aroma Thai Oil massage", price: "1899 / 2469 / 2969" },
+                    { name: "Royal Thai Oil massge", price: "2499 / 3249 / 3749" },
+                    { name: "Hawaiian Lomi Lomi", price: "2999 / 3999 / 4499" },
+                    { name: "Fifth Element Oil Massage", price: "2999 / 3699 / 4199" },
+                    { name: "Balinese Oil Massage", price: "2099 / 2729 / 3229" },
+                    { name: "Fourhand Oil Massage", price: "3499 / 3999 / 4499" },
+                    { name: "Classic Oil Massage", price: "1599 / 2079 / 2579" },
+                    { name: "Thai Dry Oil Massage", price: "1199 / 1799 / 2299" },
+                    { name: "Hot Stone Oil Massge", price: "2399 / 2999 / 3499" },
+                    { name: "Swadesh Massage", price: "1799 / 2339 / 2839" },
+                    { name: "Deep Tissue massage", price: "1799 / 2499 / 2999" },
+                    { name: "Signature massage", price: "2499 / 3499 / 4499" },
+                    { name: "Regular Massage", price: "1500 / 2000 / 2500" }
                 ]
             },
             {
-                category: "Quick Relief",
+                category: "Reflexology",
                 items: [
-                    { name: "Foot Reflexology (30 min)", price: "1200" },
-                    { name: "Back & Shoulder Release", price: "1500" }
+                    { name: "Oriented Foot & Reflexology", price: "949 / 1449 / 1949" }
                 ]
             }
         ]
