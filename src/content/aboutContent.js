@@ -1,7 +1,7 @@
 
 export const aboutContent = {
     hero: {
-        title: "About Us",
+        title: "About Us one",
         subtitle: "Be Enrich Signature Salon",
         description: "A premium destination for beauty, hair, and wellness services, designed for individuals who value quality, care, and confidence.",
         image: "/images/about/about.webp" // Placeholder, will rely on existing or generic
