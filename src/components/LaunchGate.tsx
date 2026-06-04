@@ -9,7 +9,19 @@ export default function LaunchGate() {
   const [isCelebrating, setIsCelebrating] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const CELEBRATION_DURATION = 5000; // ms; set between 5000-10000 as desired
+  const CELEBRATION_DURATION = 3500; // ms; set between 5000-10000 as desired
+
+  // Check localStorage first so this browser remembers the launch
+  useEffect(() => {
+    try {
+      const val = localStorage.getItem("site:launched");
+      if (val === "true") {
+        setLaunched(true);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   // Fetch persisted state
   useEffect(() => {
@@ -121,6 +133,11 @@ export default function LaunchGate() {
   }, [isCelebrating]);
 
   const handleLaunch = async () => {
+    try {
+      localStorage.setItem("site:launched", "true");
+    } catch (e) {
+      // ignore
+    }
     // trigger celebration animation
     setIsCelebrating(true);
     // show celebration text for CELEBRATION_DURATION, then transition out
