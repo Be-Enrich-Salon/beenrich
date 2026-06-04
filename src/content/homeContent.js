@@ -354,7 +354,7 @@ export const homeContent = {
             },
             phone: {
                 label: "Phone",
-                value: "+91 81259 44445"
+                value: "+91 98856 14445"
             },
             email: {
                 label: "Email",
@@ -418,7 +418,7 @@ export const homeContent = {
         contact: {
             title: "Visit Us",
             address: "Serving you across Vijayawada, Guntur, Ongole, and Tenali.",
-            phone: "+91 81259 44445",
+            phone: "+91 98856 14445",
             email: "enrich.ap@gmail.com"
         },
         copyright: "Be Enrich Signature Salon. All rights reserved.",

@@ -14,7 +14,7 @@ const locations = [
         name: "Guntur",
         address: "D.No. 5-87-50/1 1'st Floor, Lakshmipuram Main Rd, opp. Seetharamaiah High School, Brindavan Gardens, Guntur, Andhra Pradesh 522007",
         overview: "Brindavan Gardens, Guntur",
-        phone: "+91 81259 44445",
+        phone: "+91 98856 14445",
         mapEmbed: "https://maps.google.com/maps?q=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007&z=15&output=embed",
         mapLink: "https://www.google.com/maps/search/?api=1&query=D.No.+5-87-50/1+1'st+Floor,+Lakshmipuram+Main+Rd,+opp.+Seetharamaiah+High+School,+Brindavan+Gardens,+Guntur,+Andhra+Pradesh+522007",
         staticMap: "/images/locations/guntur.png",
@@ -24,7 +24,7 @@ const locations = [
         name: "Vijayawada",
         address: "2nd Floor, Shop No 12,13A, Trendset Mall, Sai Nagar, Kala Nagar, Acharya Ranga Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520008",
         overview: "Trendset Mall, Benz Circle, Vijayawada",
-        phone: "+91 81259 44445",
+        phone: "+91 98856 14445",
         mapEmbed: "https://maps.google.com/maps?q=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008&z=15&output=embed",
         mapLink: "https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Shop+No+12,13A,+Trendset+Mall,+Sai+Nagar,+Kala+Nagar,+Acharya+Ranga+Nagar,+Benz+Circle,+Vijayawada,+Andhra+Pradesh+520008",
         staticMap: "/images/locations/vijayawada.png",
@@ -34,7 +34,7 @@ const locations = [
         name: "Ongole",
         address: "M.K.R. Plaza, D.No. 7-1205, 2ND floor , upstairs Axis Bank, Manganmuru Road , ongole , ongole , Andhra Pradesh , 523002",
         overview: "M.K.R. Plaza, Manganmuru Road, Ongole",
-        phone: "+91 81259 44445",
+        phone: "+91 98856 14445",
         mapEmbed: "https://maps.google.com/maps?q=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002&z=15&output=embed",
         mapLink: "https://www.google.com/maps/search/?api=1&query=M.K.R.+Plaza,+D.No.+7-1205,+2ND+floor+,+upstairs+Axis+Bank,+Manganmuru+Road+,+ongole+,+ongole+,+Andhra+Pradesh+,+523002",
         staticMap: "/images/locations/ongole.png",
@@ -44,7 +44,7 @@ const locations = [
         name: "Tenali",
         address: "Door No 19-15-47, Near Opo Saibaba Temple, Boss Road, Bazar, Tenali-522201, Andhra Pradesh",
         overview: "Near Saibaba Temple, Boss Road, Tenali",
-        phone: "+91 81259 44445",
+        phone: "+91 98856 14445",
         mapEmbed: "https://maps.google.com/maps?q=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh&z=15&output=embed",
         mapLink: "https://www.google.com/maps/search/?api=1&query=Door+No+19-15-47,+Near+Opo+Saibaba+Temple,+Boss+Road,+Bazar,+Tenali-522201,+Andhra+Pradesh",
         staticMap: "/images/locations/tenali.png",
@@ -258,11 +258,11 @@ export default function ContactPage() {
                                 Book Now
                             </button>
                             <a
-                                href="tel:+918125944445"
+                                href="tel:+919885614445"
                                 className="inline-flex items-center gap-2 border border-white text-white bg-transparent px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white/10 transition-all shadow-lg transform hover:-translate-y-1"
                             >
                                 <Phone className="h-5 w-5 fill-current" />
-                                Call +91 81259 44445
+                                Call +91 98856 14445
                             </a>
                         </div>
                     </motion.div>

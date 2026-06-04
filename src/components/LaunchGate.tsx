@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Scissors, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function LaunchGate() {
   const [launched, setLaunched] = useState<boolean | null>(null);
@@ -178,7 +178,7 @@ export default function LaunchGate() {
           className="text-center"
         >
           <div className="mx-auto w-28 h-28 rounded-full bg-white/5 flex items-center justify-center mb-6 shadow-glow">
-            <Scissors className="w-12 h-12 text-gold" />
+            <img src="/favicon.png" alt="Be Enrich" className="w-14 h-14 object-contain" />
           </div>
 
           <h1 className="text-5xl md:text-6xl font-serif text-paper leading-tight mb-4">Be Enrich Salon</h1>
