@@ -65,10 +65,10 @@ const ServicesPage = () => {
                                         <h4 className="text-lg font-display text-paper mb-2">Call Direct</h4>
                                         <p className="text-sm text-mist/60 mb-4">Speak with our team</p>
                                         <a
-                                            href="tel:+918125944445"
+                                            href="tel:+919885614445"
                                             className="text-gold text-sm font-semibold hover:underline"
                                         >
-                                            +91 81259 44445
+                                            +91 98856 14445
                                         </a>
                                     </div>
                                 </div>

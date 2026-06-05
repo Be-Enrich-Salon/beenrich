@@ -61,7 +61,7 @@ const BookingContainer: React.FC<BookingContainerProps> = ({ toggleBooking }) =>
     };
 
     const sendToWhatsApp = () => {
-        const phoneNumber = "918125944445";
+        const phoneNumber = "919885614445";
         let message = `Hello Be Enrich! \n\nI want to book an appointment.\n\n*Location:* ${selectedLocation || "Not selected"}\n*Gender:* ${selectedGender}\n*Services request:* \n`;
 
         if (selectedServices.length > 0) {

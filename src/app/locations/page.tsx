@@ -82,9 +82,9 @@ export default function LocationsPage() {
                 <Clock className="h-4 w-4 text-gold" />
                 Mon–Sun: 9:00 AM – 9:00 PM
               </span>
-              <a href="tel:+918125944445" className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 backdrop-blur hover:bg-paper/20 transition-colors">
+              <a href="tel:+919885614445" className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 backdrop-blur hover:bg-paper/20 transition-colors">
                 <Phone className="h-4 w-4 text-gold" />
-                +91 81259 44445
+                +91 98856 14445
               </a>
             </div>
           </motion.div>

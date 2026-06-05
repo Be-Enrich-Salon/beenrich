@@ -30,12 +30,16 @@ export default function LaunchGate() {
         const res = await fetch("/api/site-state");
         if (res.ok) {
           const data = await res.json();
-          setLaunched(!!data.launched);
+          // Preserve any existing client-side (localStorage) state — don't let
+          // a server "false" override a local "true". Only set launched
+          // to true if either side says true; otherwise keep prior value or
+          // set to false when nothing was set.
+          setLaunched((prev) => Boolean(prev) || !!data.launched);
         } else {
-          setLaunched(true);
+          setLaunched((prev) => Boolean(prev) || false);
         }
       } catch (e) {
-        setLaunched(true);
+        setLaunched((prev) => Boolean(prev) || false);
       }
     };
     fetchState();
