@@ -5,7 +5,6 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import GlobalBookingButton from "@/components/booking/GlobalBookingButton";
 import { BookingProvider } from "@/context/BookingContext";
-import LaunchGate from "@/components/LaunchGate";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -43,7 +42,6 @@ export default function RootLayout({
       <body className="bg-paper text-ink antialiased">
         <BookingProvider>
           <Navbar />
-          <LaunchGate />
           {children}
           <GlobalBookingButton />
           <Footer />
